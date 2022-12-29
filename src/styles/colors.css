@@ -1,0 +1,16 @@
+:root{
+	--c-black: #121938;
+	--c-blue: #46b4ff;
+	--c-gray: #7ea1b3;
+	--c-light-grey: #d7dde0;
+	--c-green: #9ef2cb;
+	--c-pink: #ffb8d9;
+	--c-orange: #ffb7a3;
+	--c-yellow: #ffdace;
+	--c-white: #fff;
+
+
+    --t-subdue: var(--c-gray);
+    --t-active: var(--c-blue);
+	--bg-c-navbar: var(--c-light-grey)
+}
