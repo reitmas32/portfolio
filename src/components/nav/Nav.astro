@@ -1,0 +1,39 @@
+---
+
+// Data
+import { current_logo } from './logo';
+import {Tabs} from './tabs'
+
+// Components
+import Socials from './Socials.astro';
+import Tab from './tab.astro'
+---
+
+<nav>
+    <!-- Logo Section -->
+    <a class="link" href="/">
+        <img
+            src={current_logo.src}
+            width={current_logo.width}
+            height={current_logo.height}
+            style="border-radius: 50%;"
+        />
+    </a>
+    <!-- Tabs Section -->
+    {Tabs.map(tab_item => <Tab tab_item={tab_item}/>)}
+
+    <!-- Socials Section -->
+    <Socials></Socials>
+</nav>
+
+<style>
+    nav {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        padding: 1rem;
+        background-color: var(--bg-c-navbar);
+    }
+
+
+</style>
