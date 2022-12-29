@@ -1,0 +1,63 @@
+---
+import '../../styles/colors.css';
+---
+
+<div id="container">
+  <div class="toggle">
+  </div>
+  </div>
+<script>{
+  var toggle = document.getElementById('container')
+  var body = document.querySelector('body')
+  var nav = document.getElementById('navbar')
+
+  toggle.onclick = function(){
+    toggle.classList.toggle('active')
+    body.classList.toggle('active')
+    nav.classList.toggle('active')
+  }
+}
+</script>
+
+<style>
+  #container{
+    background-color: var(--bg-c-light-theme);
+    position: relative;
+    width: 80px;
+    height: 40px;
+    box-shadow: inset 4px 4px 6px #a19d9d,
+                inset -4px -4px 6px #fff;
+    margin: 0px auto;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    gap: 0.75em;
+    margin-left: auto;
+  }
+
+  .toggle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    transform: scale(.7);
+    background-color: var(--bg-c-light-theme);
+    border-radius: 25px;
+    box-shadow: 3px 3px 8px #c4c4c4,
+                -3px -3px 8px #fff;
+  }
+
+  #container.active .toggle{
+    left: 40px;
+    background-color: var(--bg-c-dark-theme);
+  }
+
+  body.active{
+    background-color: var(--bg-c-dark-theme);
+  }
+
+  #navbar.active{
+    background-color: var(--bg-c-dark-theme);
+  }
+</style>
