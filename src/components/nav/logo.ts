@@ -10,4 +10,4 @@ class Logo{
     }
 }
 
-export let current_logo = new Logo('../../public/assets/logo.png', '35', '35')
+export let current_logo = new Logo('https://raw.githubusercontent.com/reitmas32/portfolio/main/public/assets/logo.png', '35', '35')
