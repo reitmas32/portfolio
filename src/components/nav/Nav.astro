@@ -5,11 +5,11 @@ import { current_logo } from './logo';
 import {Tabs} from './tabs'
 
 // Components
-import Socials from './Socials.astro';
 import Tab from './tab.astro'
+import RightNav from './RightNav.astro';
 ---
 
-<nav>
+<nav id="navbar">
     <!-- Logo Section -->
     <a class="link" href="/">
         <img
@@ -22,8 +22,8 @@ import Tab from './tab.astro'
     <!-- Tabs Section -->
     {Tabs.map(tab_item => <Tab tab_item={tab_item}/>)}
 
-    <!-- Socials Section -->
-    <Socials></Socials>
+    <RightNav></RightNav>
+
 </nav>
 
 <style>
@@ -32,7 +32,6 @@ import Tab from './tab.astro'
         gap: 1rem;
         align-items: center;
         padding: 1rem;
-        background-color: var(--bg-c-navbar);
     }
 
 
