@@ -12,5 +12,7 @@
 
     --t-subdue: var(--c-gray);
     --t-active: var(--c-blue);
-	--bg-c-navbar: var(--c-light-grey)
+	--bg-c-navbar: var(--c-light-grey);
+	--bg-c-dark-theme: var(--c-black);
+	--bg-c-light-theme: var(--c-light-grey);
 }
