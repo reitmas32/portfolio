@@ -1,32 +1,44 @@
 ---
-import '../../styles/colors.css';
+import "../../styles/colors.css";
 ---
 
 <div id="container">
-  <div class="toggle">
+  <!--svg class="toggle" ></svg>-->
+  <div id="toggle" class="toggle">
+    <img id="icon-toggle" class="icon-toggle" src="../../../public/assets/sun-icon.svg" width="30" height="30"/>
   </div>
-  </div>
-<script>{
-  var toggle = document.getElementById('container')
-  var body = document.querySelector('body')
-  var nav = document.getElementById('navbar')
+</div>
+<script>
+  {
+    var container = document.getElementById("container");
+    var icon_toggle = document.getElementById("icon-toggle");
 
-  toggle.onclick = function(){
-    toggle.classList.toggle('active')
-    body.classList.toggle('active')
-    nav.classList.toggle('active')
+    var body = document.querySelector("body");
+    var nav = document.getElementById("navbar");
+    var func = function () {
+      container.classList.toggle("active");
+      var active_flag = container.classList.contains("active");
+      body.classList.toggle("active");
+      nav.classList.toggle("active");
+
+      if (active_flag == true){
+        icon_toggle.setAttribute('src', '../../../public/assets/moon-icon.svg');
+      }else{
+        icon_toggle.setAttribute('src', '../../../public/assets/sun-icon.svg');
+      }
+    };
+
+    container.onclick = func;
   }
-}
 </script>
 
 <style>
-  #container{
+  #container {
     background-color: var(--bg-c-light-theme);
     position: relative;
     width: 80px;
     height: 40px;
-    box-shadow: inset 4px 4px 6px #a19d9d,
-                inset -4px -4px 6px #fff;
+    box-shadow: inset 4px 4px 6px #a19d9d, inset -4px -4px 6px #fff;
     margin: 0px auto;
     border-radius: 25px;
     cursor: pointer;
@@ -35,29 +47,28 @@ import '../../styles/colors.css';
     margin-left: auto;
   }
 
-  .toggle{
+  .icon-toggle {
     position: absolute;
     top: 0;
     left: 0;
     width: 40px;
     height: 40px;
-    transform: scale(.7);
+    transform: scale(0.7);
     background-color: var(--bg-c-light-theme);
     border-radius: 25px;
-    box-shadow: 3px 3px 8px #c4c4c4,
-                -3px -3px 8px #fff;
+    box-shadow: 3px 3px 8px #c4c4c4, -3px -3px 8px #fff;
   }
 
-  #container.active .toggle{
+  #container.active .icon-toggle {
     left: 40px;
     background-color: var(--bg-c-dark-theme);
   }
 
-  body.active{
+  body.active {
     background-color: var(--bg-c-dark-theme);
   }
 
-  #navbar.active{
+  #navbar.active {
     background-color: var(--bg-c-dark-theme);
   }
 </style>
