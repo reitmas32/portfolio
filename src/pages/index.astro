@@ -1,5 +1,6 @@
 ---
 import Nav from '../components/nav/Nav.astro';
+import '../styles/colors.css';
 ---
 
 <html lang="en">
@@ -15,3 +16,11 @@ import Nav from '../components/nav/Nav.astro';
 		<h1>Astro</h1>
 	</body>
 </html>
+
+
+<style>
+	body{
+		background-color: var(--bg-c-light-theme);
+	}
+
+</style>
