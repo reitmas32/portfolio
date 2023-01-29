@@ -1,0 +1,81 @@
+/* Global variables */
+:root {
+	/* Colors */
+	/*TODO Cambiar el color de --c-black para la pagina principat y se vea lo que esta oscuro */
+	--c-black: #121938;
+	--c-blue: #46b4ff;
+	--c-gray: #90aab7;
+	--c-green: #9ef2cb;
+	--c-pink: #ffb8d9;
+	--c-orange: #ffb7a3;
+	--c-yellow: #ffdace;
+	--c-white: #fff;
+
+	/* Fonts */
+	--f-u12: 5.0625em;
+	--f-u10: 3.8634105686174953em;
+	--f-u8: 2.9483340684850083em;
+	--f-u6: 2.25em;
+	--f-u4: 1.7170713638299977em;
+	--f-u3: 1.5em;
+	--f-u2: 1.3103706971044482em;
+	--f-u1: 1.1447142425533319em;
+	
+	--f-d1: 0.8735804647362989em;
+	--f-d2: 0.7631428283688879em;
+	--f-d6: 0.4444444444444444em;
+
+	--t-fg: var(--c-black);
+	--t-bg: var(--c-white);
+	--t-subdue: var(--c-gray);
+	--t-active: var(--c-blue);
+	
+}
+
+
+@media(prefers-color-scheme: light){
+	body {
+		margin: 0;
+		color: red;
+		background-color: var(--background-color-light);
+		font-family: 'Inter', 'system-ui', sans-serif;
+		
+	}
+}
+
+* {
+	box-sizing: content-box;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.text{
+	color: var(--t-subdue);
+}
+
+a {
+	color: var(--t-active);
+}
+
+h1 {
+	font-size: var(--f-u8);
+}
+
+.button {
+	display: inline-block;
+	border: 3px solid currentColor;
+	padding: 0.5em 1em;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.wrapper {
+	max-width: 80em;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}

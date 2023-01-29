@@ -1,0 +1,19 @@
+:root{
+    --c-black: #000000;
+    --c-blue-black: #222222;
+    --c-blue: #46b4ff;
+    --c-gray: #7ea1b3;
+    --c-light-grey: #cddfe9;
+    --c-green: #9ef2cb;
+    --c-pink: #ffb8d9;
+    --c-orange: #ffb7a3;
+    --c-yellow: #ffdace;
+    --c-white: #fff;
+
+
+--t-subdue: white;
+--t-active: var(--c-blue);
+    --bg-c-navbar: var(--c-light-grey);
+    --bg-c-dark-theme: var(--c-blue-black);
+    --bg-c-light-theme: var(--c-light-grey);
+}
