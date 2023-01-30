@@ -5,7 +5,7 @@ title_head: Telegram Bot Fortnite
 client: Self
 publishDate: 2022-10-26 00:00:00
 # TODO (Image): Create image from banner 
-img: ../../public/assets/telegram_bot_fortnite.jpg
+img: https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/telegram_bot_fortnite.jpg
 description: |
   Bot Telegram to see the shop of Fortnite
 tags:

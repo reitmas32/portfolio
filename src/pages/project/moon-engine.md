@@ -4,7 +4,7 @@ title: Moon Engine
 title_head: Moon Engine
 client: Self
 publishDate: 2022-02-08 00:00:00
-img: ../../public/assets/moon-banner.png
+img: https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/moon-banner.png
 description: |
   Moon es un Game Engine desarrollado por KEGE Studios escrito en C/C++, fue diseñado basado en la Arquitectura ECS y usando algunas funcionalidades del nuevo estándar de C++20.
 tags:

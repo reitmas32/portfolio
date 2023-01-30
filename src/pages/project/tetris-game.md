@@ -4,7 +4,7 @@ title: Tetris Game
 title_head: Tetris Game
 client: Self
 publishDate: 2020-11-28 00:00:00
-img: ../../public/assets/tetris-banner.png
+img: https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/tetris-banner.png
 description: |
   Juego basao en el clasico Tetris desarrollado con C++ y la biblioteca miniwin
 tags:

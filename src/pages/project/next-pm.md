@@ -4,7 +4,7 @@ title:
 title_head: Next Package Manager
 client: Self
 publishDate: 2022-08-23 00:00:00
-img: ../../public/assets/next-img.jpg
+img: https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/next-homepage-img.png
 description: |
   Next is a C/C++ project manager, it is designed as a solution to the administration that this type of projects require.
 tags:
