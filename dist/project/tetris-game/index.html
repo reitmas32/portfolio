@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en" class="astro-MGNBYOOF">
+	<head>
+		<meta charset="UTF-8">
+<meta name="description" property="og:description" content="Juego basao en el clasico Tetris desarrollado con C++ y la biblioteca miniwin
+">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Astro v1.2.1">
+<title>Tetris Game</title>
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
+		
+	<link rel="stylesheet" href="/assets/03277f15.382476e7.css" />
+<link rel="stylesheet" href="/assets/910a52a3.a6b5f9c2.css" /><script type="module">{var s="https://raw.githubusercontent.com/reitmas32/portfolio/37e05f4497d8fe13bc01852bce3c5fb69fc52f07/public/assets/moon-icon.svg",a="https://raw.githubusercontent.com/reitmas32/portfolio/37e05f4497d8fe13bc01852bce3c5fb69fc52f07/public/assets/sun-icon.svg",t=document.getElementById("container"),e=document.getElementById("icon-toggle"),o=document.querySelector("body"),i=document.getElementById("navbar"),r=function(){t.classList.toggle("active");var c=t.classList.contains("active");o.classList.toggle("active"),i.classList.toggle("active"),c==!0?e.setAttribute("src",s):e.setAttribute("src",a)};t.onclick=r}
+</script></head>
+	<body style="background-color: #222222;" class="astro-MGNBYOOF">
+		<nav class="astro-CBBQ5NZF">
+	<a class="link astro-CBBQ5NZF" href="/">
+		<img src="https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/logo.png" width="35" height="35" style="border-radius: 50%;" class="astro-CBBQ5NZF">
+	</a>
+	<a class="nav-link astro-CBBQ5NZF" href="/projects/"> Portfolio</a>
+	<a class="nav-link astro-CBBQ5NZF" href="/#about"> About</a>
+	<div class="socials astro-CBBQ5NZF">
+		<a class="social astro-CBBQ5NZF" href="https://twitter.com/rafazram" target="_blank">
+			<svg class="socialIcon astro-CBBQ5NZF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+				<path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" class="astro-CBBQ5NZF"></path>
+			</svg>
+		</a>
+		<a class="social astro-CBBQ5NZF" href="https://github.com/reitmas32" target="_blank">
+			<svg class="socialIcon astro-CBBQ5NZF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+				<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" class="astro-CBBQ5NZF"></path>
+			</svg>
+		</a>
+		<a class="social astro-CBBQ5NZF" href="https://www.linkedin.com/in/rafazamora/" target="_blank">
+			<!--?xml version="1.0"?-->
+			<svg class="socialIcon astro-CBBQ5NZF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px">
+				<path d="M9,25H4V10h5V25z M6.501,8C5.118,8,4,6.879,4,5.499S5.12,3,6.501,3C7.879,3,9,4.121,9,5.499C9,6.879,7.879,8,6.501,8z M27,25h-4.807v-7.3c0-1.741-0.033-3.98-2.499-3.98c-2.503,0-2.888,1.896-2.888,3.854V25H12V9.989h4.614v2.051h0.065 c0.642-1.18,2.211-2.424,4.551-2.424c4.87,0,5.77,3.109,5.77,7.151C27,16.767,27,25,27,25z" class="astro-CBBQ5NZF"></path>
+			</svg>
+		</a>
+	</div>
+</nav>
+
+
+		<header style="background-image:url(https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/tetris-banner.png)" class="hero astro-MGNBYOOF">
+			<h1 class="title astro-MGNBYOOF" style="color: #222222;">Tetris Game</h1>
+		</header>
+		<div class="leadIn astro-MGNBYOOF">
+			<div class="wrapper astro-MGNBYOOF">
+				<span class="tag astro-MGNBYOOF">design</span><span class="tag astro-MGNBYOOF">dev</span><span class="tag astro-MGNBYOOF">Game</span><span class="tag astro-MGNBYOOF">C++</span>
+				<h3 class="tagline astro-MGNBYOOF">Juego basao en el clasico Tetris desarrollado con C++ y la biblioteca miniwin
+</h3>
+			</div>
+		</div>
+		<div class="wrapper astro-MGNBYOOF">
+			<div class="content astro-MGNBYOOF"><h2 id="introducción"><strong>Introducción</strong></h2>
+<p>Juego basao en el clasico Tetris desarrollado con C++ y la biblioteca miniwin</p>
+<h3 id="características-principales"><strong>Características principales</strong></h3>
+<ul>
+<li>Eficiente en el uso de Recursos</li>
+<li>Arquitectura Kernel para el escalamiento e interacción entre los plugins</li>
+<li>Uso de la STL para los contenedores</li>
+<li>Concepts implementados para una mayor seguridad en templates</li>
+<li>Predicción de tipos en tiempo de compilación</li>
+<li>Un Core simple, liviano y libre</li>
+<li>Plugins pequeños y específicos</li>
+<li>Ejemplos para todos los plugins oficiales</li>
+<li>Solo incluyes lo que necesitas</li>
+<li>Independencia de plugins</li>
+</ul>
+<h3 id="características-de-la-versión"><strong>Características de la versión</strong></h3>
+<ul>
+<li>GameContext</li>
+<li>System</li>
+<li>Component</li>
+<li>Entity</li>
+<li>Herramienta de Instalacion y creacion de proyectos</li>
+<li>Uso de la STL para los contenedores</li>
+<li>Predicción de tipos en tiempo de compilación</li>
+</ul></div>
+			<footer class="urls astro-MGNBYOOF" style="
+			justify-content: center;">
+				<div class="astro-MGNBYOOF"></div>
+
+				<a href="https://github.com/reitmas32/Tetris" class="button astro-MGNBYOOF" target="_blank">Url Repository</a>
+			</footer>
+		</div>
+		<footer class="astro-MGNBYOOF">
+			<a href="/projects" class="button astro-MGNBYOOF">View More</a>
+		</footer>
+		<footer style="color: white;" class="astro-BUV54OR4">
+	&copy; 2023 Rafa Zamora
+	<small class="byline astro-BUV54OR4">🚀 Built by Astro</small>
+</footer>
+
+	</body></html>
