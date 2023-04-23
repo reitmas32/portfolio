@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/ui/portfolio.dart';
 import 'package:provider/provider.dart';
-import 'package:portfolio/ui/providers/theme.dart';
+import 'package:portfolio/ui/providers/theme_privider.dart';
 
 void main() {
   runApp(const MyApp());

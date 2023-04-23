@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/ui/pages/my_home_page.dart';
-import 'package:portfolio/ui/providers/theme.dart';
-import 'package:portfolio/ui/theme.dart';
+import 'package:portfolio/ui/providers/theme_privider.dart';
+import 'package:portfolio/ui/theme_preference.dart';
 import 'package:provider/provider.dart';
 
 class Portfolio extends StatelessWidget {
