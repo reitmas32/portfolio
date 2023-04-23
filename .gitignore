@@ -114,3 +114,4 @@ dist
 /windows
 /web
 /.dart_tool
+/build
