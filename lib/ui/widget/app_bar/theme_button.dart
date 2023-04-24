@@ -23,7 +23,7 @@ class ThemeButton extends StatelessWidget {
     if (nameTheme == ThemePreference.LIGHT) {
       
       selectColors = () {
-        return currentTheme.isDarkTheme() ? Colors.grey : Colors.orange;
+        return currentTheme.isDarkTheme() ? Colors.grey : Colors.orangeAccent;
       };
       
       onTap = () {
@@ -32,11 +32,11 @@ class ThemeButton extends StatelessWidget {
         }
       };
       
-      icon = Icons.wb_sunny;
+      icon = Icons.light_mode;
     } else {
       
       selectColors = () {
-        return currentTheme.isDarkTheme() ? Colors.orange : Colors.grey;
+        return currentTheme.isDarkTheme() ? Colors.blueAccent : Colors.grey;
       };
       onTap = () {
         if (!currentTheme.isDarkTheme()) {
@@ -44,7 +44,7 @@ class ThemeButton extends StatelessWidget {
         }
       };
       
-      icon = Icons.brightness_2;
+      icon = Icons.dark_mode;
     }
 
     return InkWell(
