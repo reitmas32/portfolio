@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/ui/portfolio.dart';
 
 class ButtonAppBar extends StatelessWidget {
   const ButtonAppBar({
@@ -13,9 +14,15 @@ class ButtonAppBar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: InkWell(
+        borderRadius: BorderRadius.circular(10.0),
         hoverColor: Theme.of(context).colorScheme.secondary,
         // ignore: avoid_print
-        onTap: () => print('Hello'),
+        onTap: () {
+          
+          final myAppState = context.findAncestorStateOfType<PortfolioState>();
+          myAppState?.delegate.setNewRoutePath(Uri.parse('/${lable.toLowerCase()}'));
+          
+        },
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Text(
