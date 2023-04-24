@@ -8,6 +8,7 @@ class LogoButtonMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      borderRadius: BorderRadius.circular(10.0),
       onTap: () {
         // ignore: avoid_print
         print('Menu');
