@@ -317,6 +317,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.16"
+  url_strategy:
+    dependency: "direct main"
+    description:
+      name: url_strategy
+      sha256: "42b68b42a9864c4d710401add17ad06e28f1c1d5500c93b98c431f6b0ea4ab87"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   vector_math:
     dependency: transitive
     description:
@@ -341,6 +349,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  yaml:
+    dependency: "direct main"
+    description:
+      name: yaml
+      sha256: "23812a9b125b48d4007117254bca50abb6c712352927eece9e155207b1db2370"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.1"
+  yaml_writer:
+    dependency: "direct main"
+    description:
+      name: yaml_writer
+      sha256: "18e5e7f084a2624fd055c7d785e0a7776b1b2b84731cf794d7ceb29275c387ab"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
 sdks:
   dart: ">=2.19.6 <3.0.0"
   flutter: ">=3.0.0"
