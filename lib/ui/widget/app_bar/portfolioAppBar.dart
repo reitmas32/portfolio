@@ -29,7 +29,7 @@ class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Row(
         children: const [
           LogoButtonMenu(),
-          ButtonAppBar(lable: 'Portfolio'),
+          ButtonAppBar(lable: 'Projects'),
           ButtonAppBar(lable: 'About'),
         ],
       ),
