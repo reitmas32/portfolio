@@ -52,7 +52,7 @@ class ThemeButton extends StatelessWidget {
       onTap: onTap,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Icon(icon, color: selectColors()),
+        child: Icon(icon, color: selectColors(), size: 25.0,),
       ),
     );
   }
