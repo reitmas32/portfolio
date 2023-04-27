@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LogoButtonMenu extends StatelessWidget {
   const LogoButtonMenu({
@@ -10,8 +11,7 @@ class LogoButtonMenu extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(10.0),
       onTap: () {
-        // ignore: avoid_print
-        print('Menu');
+        context.go('/');
       },
       hoverColor: Theme.of(context).colorScheme.secondary,
       child: Padding(
