@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:portfolio/ui/portfolio.dart';
 
 class ButtonAppBar extends StatelessWidget {
@@ -18,9 +19,7 @@ class ButtonAppBar extends StatelessWidget {
         hoverColor: Theme.of(context).colorScheme.secondary,
         // ignore: avoid_print
         onTap: () {
-          
-          final myAppState = context.findAncestorStateOfType<PortfolioState>();
-          myAppState?.delegate.setNewRoutePath(Uri.parse('/${lable.toLowerCase()}'));
+          context.go('/${lable.toLowerCase()}');
           
         },
         child: Padding(
