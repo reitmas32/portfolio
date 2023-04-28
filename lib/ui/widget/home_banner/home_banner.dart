@@ -6,6 +6,29 @@ class HomeBanner extends StatelessWidget {
     super.key,
   });
 
+  Widget getHobbies(double width) {
+    if (width > 750) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: const [
+          HobbyButton(
+            lable: '👩‍💻 Developer',
+            backgroundColor: Colors.purple,
+          ),
+          HobbyButton(
+            lable: '🎮 Gamer',
+            backgroundColor: Colors.red,
+          ),
+          HobbyButton(
+            lable: '✏️ Writer',
+            backgroundColor: Colors.blue,
+          ),
+        ],
+      );
+    }
+    return Container();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -15,29 +38,29 @@ class HomeBanner extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.only(
-              left: MediaQuery.of(context).size.width / 10,
-              top: MediaQuery.of(context).size.width / 10),
-          child: SizedBox(
+              left: MediaQuery.of(context).size.width / 30,
+              top: MediaQuery.of(context).size.width / 5),
+          // ignore: sized_box_for_whitespace
+          child: Container(
             width: MediaQuery.of(context).size.width / 2,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Text(
+                  'The personal site of',
+                  style: TextStyle(
+                      color: const Color.fromARGB(255, 35, 35, 35),
+                      fontWeight: FontWeight.bold,
+                      fontSize: MediaQuery.of(context).size.width / 50),
+                ),
                 Text(
                   'Rafael Zamora',
                   style: TextStyle(
-                      color: Color.fromARGB(255, 35, 35, 35),
+                      color: const Color.fromARGB(255, 35, 35, 35),
                       fontWeight: FontWeight.bold,
                       fontSize: MediaQuery.of(context).size.width / 20),
                 ),
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      HobbyButton(lable: 'Write', backgroundColor: Colors.blue,),
-                      HobbyButton(lable: 'Gamer', backgroundColor: Colors.red,),
-                      HobbyButton(lable: 'Cine', backgroundColor: Colors.purple,),
-                    ],
-                  ),
-                ),
+                getHobbies(MediaQuery.of(context).size.width)
               ],
             ),
           ),
