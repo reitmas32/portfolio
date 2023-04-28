@@ -1,12 +1,10 @@
-// ignore: file_names
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:portfolio/ui/theme_preference.dart';
 import 'package:portfolio/ui/widget/app_bar/button_app_bar.dart';
 import 'package:portfolio/ui/widget/app_bar/button_icon.dart';
 import 'package:portfolio/ui/widget/app_bar/button_image.dart';
 import 'package:portfolio/ui/widget/app_bar/theme_button.dart';
-import 'package:provider/provider.dart';
-import 'package:portfolio/ui/providers/theme_provider.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 
 class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -15,6 +13,7 @@ class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
   });
 
   List<Widget> getActions(double width) {
+    // ignore: no_leading_underscores_for_local_identifiers
     List<Widget> _actions = [];
 
     if (width > 750) {
@@ -71,18 +70,16 @@ class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: getActions(MediaQuery.of(context).size.width))
       ],
-      title: Expanded(
-        child: Row(
-          children: const [
-            ButtonImage(
-              url: '/',
-              imageUrl:
-                  'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/logo.png',
-            ),
-            ButtonAppBar(lable: 'Projects'),
-            ButtonAppBar(lable: 'About'),
-          ],
-        ),
+      title: Row(
+        children: const [
+          ButtonImage(
+            url: '/',
+            imageUrl:
+                'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/logo.png',
+          ),
+          ButtonAppBar(lable: 'Projects'),
+          //ButtonAppBar(lable: 'About'),
+        ],
       ),
       toolbarHeight: MediaQuery.of(context).size.height / 12,
       //toolbarHeight: MediaQuery.of(context).size.height / 12,

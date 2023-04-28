@@ -30,7 +30,7 @@ class HobbyButton extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Text(
             lable,
-            style: const TextStyle(fontSize: 24),
+            style: TextStyle(fontSize: MediaQuery.of(context).size.width / 70),
           ),
         ),
       ),
