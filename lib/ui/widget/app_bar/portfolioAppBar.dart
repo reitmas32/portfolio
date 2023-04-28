@@ -70,18 +70,16 @@ class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: getActions(MediaQuery.of(context).size.width))
       ],
-      title: Expanded(
-        child: Row(
-          children: const [
-            ButtonImage(
-              url: '/',
-              imageUrl:
-                  'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/logo.png',
-            ),
-            ButtonAppBar(lable: 'Projects'),
-            ButtonAppBar(lable: 'About'),
-          ],
-        ),
+      title: Row(
+        children: const [
+          ButtonImage(
+            url: '/',
+            imageUrl:
+                'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/logo.png',
+          ),
+          ButtonAppBar(lable: 'Projects'),
+          //ButtonAppBar(lable: 'About'),
+        ],
       ),
       toolbarHeight: MediaQuery.of(context).size.height / 12,
       //toolbarHeight: MediaQuery.of(context).size.height / 12,
