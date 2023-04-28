@@ -7,6 +7,7 @@ class AboutInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.all(50.0),
       child: Column(
@@ -16,7 +17,7 @@ class AboutInfo extends StatelessWidget {
             'About me',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: MediaQuery.of(context).size.width / 35,
+              fontSize: size.width / 35 > 30 ? size.width / 35 : 30,
             ),
           ),
           const SizedBox(
@@ -26,24 +27,21 @@ class AboutInfo extends StatelessWidget {
             'Hola!',
             style: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: MediaQuery.of(context).size.width / 50,
+              fontSize: size.width / 50 > 20 ? size.width / 50 : 20,
             ),
           ),
           const SizedBox(
             height: 20,
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width / 5,
-            child: Text(
-              'Soy Rafa, ingeniero de computación entusiasta con 3 años de experiencia en la gestión de proyectos, lenguaje scripting, POO y Servicios de Escritorio Remoto.',
-              overflow: TextOverflow.clip,
-              maxLines: 6,
-              style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontSize: MediaQuery.of(context).size.width / 80,
-              ),
-              textAlign: TextAlign.justify,
+          Text(
+            'Soy Rafa, ingeniero de computación entusiasta con 3 años de experiencia en la gestión de proyectos, lenguaje scripting, POO y Servicios de Escritorio Remoto.',
+            overflow: TextOverflow.clip,
+            maxLines: 6,
+            style: TextStyle(
+              fontWeight: FontWeight.normal,
+              fontSize: size.width / 80 > 17 ? size.width / 80 : 17,
             ),
+            textAlign: TextAlign.justify,
           ),
         ],
       ),
