@@ -8,38 +8,57 @@ class HomeBody extends StatelessWidget {
     super.key,
   });
 
+  Widget getSection(double width) {
+    if (width > 1200) {
+      return Padding(
+        padding: const EdgeInsets.all(200.0),
+        child: Row(
+          children: [
+            Flexible(
+              flex: 3,
+              child: SizedBox(
+                width: width / 2,
+                //height: 300,
+                child: const SelectedWork(),
+              ),
+            ),
+            Flexible(
+              flex: 2,
+              child: SizedBox(
+                width: width / 2,
+                //height: 300,
+                child: const AboutInfo(),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+    return Column(
+      children: [
+        SizedBox(
+          width: width / 1.4,
+          child: const SelectedWork(),
+        ),
+        SizedBox(
+          width: width / 1.4,
+          //height: 300,
+          child: const AboutInfo(),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         const HomeBanner(),
-        const SizedBox(
-          height: 400,
-        ),
-        Row(children: [
-          Expanded(
-            flex: 1,
-            child: Container(),
-          ),
-          Expanded(
-            flex: 3,
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width / 2,
-              //height: 300,
-              child: const SelectedWork(),
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width / 2,
-              //height: 300,
-              child: const AboutInfo(),
-            ),
-          ),
-        ]),
+        //SizedBox(
+        //  height: MediaQuery.of(context).size.width > 1200 ? 200 : 50,
+        //),
+        getSection(MediaQuery.of(context).size.width),
       ],
     );
   }
 }
-
