@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:portfolio/domain/models/project.dart';
+import 'package:portfolio/ui/widget/button_project.dart';
+import 'package:portfolio/ui/widget/preview_project.dart';
 
 class SelectedWork extends StatelessWidget {
   const SelectedWork({
@@ -7,6 +11,21 @@ class SelectedWork extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Project _prject = Project(
+      title: 'Next Package Manager',
+      titleHead: 'Next Package Manager',
+      publishDate: DateTime.now(),
+      img:
+          'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/next-homepage-img.png',
+      description:
+          'Next is a C/C++ project manager, it is designed as a solution to the administration that this type of projects require.',
+      tags: ['design', 'dev', 'system'],
+      urlProject: 'https://next-b3d34.web.app',
+      urlRepository: 'https://github.com/reitmas32/Next',
+      content: 'content',
+    );
+
+    Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.all(50.0),
       child: Column(
@@ -16,36 +35,21 @@ class SelectedWork extends StatelessWidget {
             'Selected Work',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: MediaQuery.of(context).size.width / 35,
+              fontSize: size.width / 35 > 30 ? size.width / 35 : 30,
             ),
             textAlign: TextAlign.start,
           ),
           const SizedBox(
             height: 20,
           ),
-          Text(
-            'Hola!',
-            style: TextStyle(
-              fontWeight: FontWeight.normal,
-              fontSize: MediaQuery.of(context).size.width / 50,
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width / 5,
-            child: Text(
-              'Soy Rafa, ingeniero de computación entusiasta con 3 años de experiencia en la gestión de proyectos, lenguaje scripting, POO y Servicios de Escritorio Remoto.',
-              overflow: TextOverflow.clip,
-              maxLines: 6,
-              style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontSize: MediaQuery.of(context).size.width / 80,
-              ),
-              textAlign: TextAlign.justify,
-            ),
-          ),
+          PreviewProject(project: _prject),
+          Center(
+              child: ButtonProjects(
+            lable: 'View All',
+            onTap: () {
+              context.go('/projects');
+            },
+          ))
         ],
       ),
     );
