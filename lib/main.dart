@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/ui/portfolio.dart';
+import 'package:portfolio/ui/providers/data_base_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:portfolio/ui/providers/theme_provider.dart';
 import 'package:url_strategy/url_strategy.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatefulWidget {
 
 class MyAppState extends State<MyApp> {
   ThemeProvider themeChangeProvider = ThemeProvider();
+  DataBaseProvider dataBaseProvider = DataBaseProvider();
 
   @override
   void initState() {
@@ -34,7 +36,10 @@ class MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
       value: themeChangeProvider,
-      child: const Portfolio(),
+      child: ChangeNotifierProvider.value(
+        value: dataBaseProvider,
+        child: const Portfolio(),
+      ),
     );
   }
 }
