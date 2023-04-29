@@ -115,3 +115,9 @@ dist
 /web
 /.dart_tool
 /build
+.flutter-plugins*
+
+# FireBase Hosting
+/.firebase
+.firebaserc
+firebase.json
