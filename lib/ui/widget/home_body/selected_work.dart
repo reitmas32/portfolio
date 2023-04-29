@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/domain/models/project.dart';
+import 'package:portfolio/ui/providers/data_base_provider.dart';
+import 'package:portfolio/ui/providers/theme_provider.dart';
 import 'package:portfolio/ui/widget/button_project.dart';
 import 'package:portfolio/ui/widget/preview_project.dart';
+import 'package:provider/provider.dart';
 
 class SelectedWork extends StatelessWidget {
   const SelectedWork({
@@ -11,20 +14,8 @@ class SelectedWork extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Project _prject = Project(
-      title: 'Next Package Manager',
-      titleHead: 'Next Package Manager',
-      publishDate: DateTime.now(),
-      img:
-          'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/next-homepage-img.png',
-      description:
-          'Next is a C/C++ project manager, it is designed as a solution to the administration that this type of projects require.',
-      tags: ['design', 'dev', 'system'],
-      urlProject: 'https://next-b3d34.web.app',
-      urlRepository: 'https://github.com/reitmas32/Next',
-      content: 'content',
-    );
 
+    final dataBaseProvider = Provider.of<DataBaseProvider>(context);
     Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.all(50.0),
@@ -42,7 +33,9 @@ class SelectedWork extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          PreviewProject(project: _prject),
+          PreviewProject(
+            project: dataBaseProvider.getServiceDataBase().getLastProject(),
+          ),
           Center(
               child: ButtonProjects(
             lable: 'View All',
