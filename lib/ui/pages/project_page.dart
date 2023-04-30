@@ -5,9 +5,11 @@ import 'package:portfolio/domain/models/project.dart';
 import 'package:portfolio/ui/providers/data_base_provider.dart';
 import 'package:portfolio/ui/tools/getTarget.dart';
 import 'package:portfolio/ui/widget/app_bar/portfolioAppBar.dart';
+import 'package:portfolio/ui/widget/button_project.dart';
 import 'package:portfolio/ui/widget/fotter/fotter.dart';
 import 'package:portfolio/ui/widget/info_project.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectPage extends StatefulWidget {
   const ProjectPage({super.key, required this.title});
@@ -20,7 +22,6 @@ class ProjectPage extends StatefulWidget {
 }
 
 class _ProjectPageState extends State<ProjectPage> {
-
   late Project project;
 
   @override
@@ -74,6 +75,30 @@ class _ProjectPageState extends State<ProjectPage> {
               ),
             ),
             InfoProject(size: size, project: project),
+            const SizedBox(
+              height: 50,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ButtonProjects(
+                  lable: 'URL REPOSITORY',
+                  onTap: () async {
+                    if (!await launchUrl(Uri.parse(project.urlRepository))) {
+                      throw Exception('Could not launch ${project.urlRepository}');
+                    }
+                  },
+                ),
+                ButtonProjects(
+                  lable: 'URL PROJECT',
+                  onTap: () async {
+                    if (!await launchUrl(Uri.parse(project.urlProject))) {
+                      throw Exception('Could not launch ${project.urlProject}');
+                    }
+                  },
+                ),
+              ],
+            ),
             const Fotter(),
           ],
         ),
