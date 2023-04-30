@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class AppTheme {
   static final ThemeData lightTheme = ThemeData(
       brightness: Brightness.light,
-      scaffoldBackgroundColor: const Color.fromARGB(255, 233, 227, 227),
+      scaffoldBackgroundColor: const Color.fromARGB(255, 212, 208, 208),
       primaryColor: Colors.green,
       colorScheme: const ColorScheme(
           brightness: Brightness.light,
