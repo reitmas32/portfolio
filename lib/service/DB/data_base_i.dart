@@ -6,6 +6,14 @@ class DataBase{
   }
 
   Project getLastProject(){
-    return throw Exception('No implemented getProjects');
+    return throw Exception('No implemented getProject');
+  }
+
+  Project getProject(String title){
+    return throw Exception('No implemented getProject');
+  }
+
+  bool existsProject(String title) {
+    return throw Exception('No implemented existsProject');
   }
 }
