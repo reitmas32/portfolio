@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/ui/pages/about_page.dart';
+import 'package:portfolio/ui/pages/error_page.dart';
 import 'package:portfolio/ui/pages/my_home_page.dart';
 import 'package:portfolio/ui/pages/project_page.dart';
 import 'package:portfolio/ui/pages/projects_page.dart';
@@ -19,6 +20,9 @@ class Portfolio extends StatefulWidget {
 
 class PortfolioState extends State<Portfolio> {
   final GoRouter _router = GoRouter(
+    errorBuilder: (context, state) {
+      return ErrorPage();
+    },
     routes: [
       GoRoute(
         path: "/",
@@ -36,7 +40,9 @@ class PortfolioState extends State<Portfolio> {
       ),
       GoRoute(
         path: "/projects/:title",
-        builder: (context, state) => ProjectPage(title: state.params['title'] ?? '',),
+        builder: (context, state) => ProjectPage(
+          title: state.params['title'] ?? '',
+        ),
       )
     ],
   );
