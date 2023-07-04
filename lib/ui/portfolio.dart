@@ -56,7 +56,7 @@ class PortfolioState extends State<Portfolio> {
       theme:
           currentTheme.isDarkTheme() ? AppTheme.darkTheme : AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
     );
   }
 }
