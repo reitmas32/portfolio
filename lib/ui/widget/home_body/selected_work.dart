@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:portfolio/domain/models/project.dart';
 import 'package:portfolio/ui/providers/data_base_provider.dart';
-import 'package:portfolio/ui/providers/theme_provider.dart';
 import 'package:portfolio/ui/widget/button_project.dart';
 import 'package:portfolio/ui/widget/preview_project.dart';
 import 'package:provider/provider.dart';
