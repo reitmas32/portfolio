@@ -41,7 +41,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: getProjects(),
             ),
-            Fotter(),
+            const Fotter(),
           ],
         ),
       ),

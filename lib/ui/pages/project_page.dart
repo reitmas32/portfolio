@@ -36,7 +36,7 @@ class _ProjectPageState extends State<ProjectPage> {
       bottomNavigationBar: BottomAppBar(
         child: Container(
           height: size.height / 10,
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20.0),
           color: Theme.of(context).colorScheme.primary,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

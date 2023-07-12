@@ -70,8 +70,8 @@ class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: getActions(MediaQuery.of(context).size.width))
       ],
-      title: Row(
-        children: const [
+      title: const Row(
+        children: [
           ButtonImage(
             url: '/',
             imageUrl:

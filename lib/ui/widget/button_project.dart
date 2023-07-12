@@ -20,7 +20,7 @@ class _ButtonProjectsState extends State<ButtonProjects> {
         style: TextButton.styleFrom(
           side: BorderSide(
               width: 3.0, color: Theme.of(context).colorScheme.onPrimary),
-          padding: EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(15.0),
         ),
         onPressed: widget.onTap,
         onHover: (isHover) {

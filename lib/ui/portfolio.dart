@@ -21,7 +21,7 @@ class Portfolio extends StatefulWidget {
 class PortfolioState extends State<Portfolio> {
   final GoRouter _router = GoRouter(
     errorBuilder: (context, state) {
-      return ErrorPage();
+      return const ErrorPage();
     },
     routes: [
       GoRoute(

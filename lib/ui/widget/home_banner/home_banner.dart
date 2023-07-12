@@ -8,9 +8,9 @@ class HomeBanner extends StatelessWidget {
 
   Widget getHobbies(double width) {
     if (width > 750) {
-      return Row(
+      return const Row(
         mainAxisAlignment: MainAxisAlignment.start,
-        children: const [
+        children: [
           HobbyButton(
             lable: '👩‍💻 Developer',
             backgroundColor: Colors.purple,

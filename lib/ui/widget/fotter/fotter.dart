@@ -9,12 +9,14 @@ class Fotter extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height / 3,
-      child: Center(
+      child: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Text('© 2023 Rafa Zamora'),
-            SizedBox(height: 25,),
+            SizedBox(
+              height: 25,
+            ),
             Text('🚀 BUILT BY FLUTTER'),
           ],
         ),

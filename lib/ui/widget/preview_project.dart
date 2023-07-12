@@ -23,7 +23,7 @@ class _PreviewProjectState extends State<PreviewProject> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 20.0),
+      padding: const EdgeInsets.symmetric(vertical: 20.0),
       width: size.width / 1.4,
       child: Column(
         children: [
@@ -31,7 +31,7 @@ class _PreviewProjectState extends State<PreviewProject> {
             widget.project!.img,
           ),
           Container(
-            padding: EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(20.0),
             color: Colors.black,
             child: Column(
               children: [
