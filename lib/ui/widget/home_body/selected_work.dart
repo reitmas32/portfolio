@@ -30,7 +30,7 @@ class SelectedWork extends StatelessWidget {
             height: 20,
           ),
           FutureBuilder<Project>(
-            future: dataBaseConnection.getLastProject_nooverride(),
+            future: dataBaseConnection.getLastProjectNoOverride(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 // Mientras el Future está en proceso

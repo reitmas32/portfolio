@@ -32,7 +32,7 @@ class DataBaseFiles implements DataBase {
     return data;
   }
 
-  Future<Project> getLastProject_nooverride() async {
+  Future<Project> getLastProjectNoOverride() async {
     Project latestProject = data.reduce((currentProject, nextProject) {
       if (currentProject.publishDate.isAfter(nextProject.publishDate)) {
         return currentProject;
