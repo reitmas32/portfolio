@@ -1,3 +1,8 @@
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:html';
+import 'package:intl/intl.dart';
+import 'package:yaml/yaml.dart';
+
 class Project {
   final String title;
   final String titleHead;
@@ -10,15 +15,15 @@ class Project {
   final String urlRepository;
 
   Project({
-    required this.title,
-    required this.titleHead,
+    this.title = '',
+    this.titleHead = '',
     required this.publishDate,
-    required this.img,
-    required this.description,
+    this.img = '',
+    this.description = '',
     required this.tags,
-    required this.urlProject,
-    required this.urlRepository,
-    required this.content,
+    this.urlProject = '',
+    this.urlRepository = '',
+    this.content = '',
   });
 
   Project.fromJson(Map<dynamic, dynamic> json)
@@ -31,6 +36,27 @@ class Project {
         tags = List.from(json['tags']),
         urlProject = json['urlProject'],
         urlRepository = json['urlRepository'];
+
+  static Future<Project> fromYamlFileWeb(String urlYamlFile) async {
+    var project = Project(publishDate: DateTime.now(), tags: []);
+
+    var result = await HttpRequest.getString(urlYamlFile);
+    final yamlMap = loadYaml(result);
+
+    project = Project(
+      title: yamlMap['title'],
+      titleHead: yamlMap['titleHead'],
+      content: yamlMap['content'],
+      publishDate: DateFormat('dd-MM-yyyy').parse(yamlMap['publishDate']),
+      img: yamlMap['img'],
+      description: yamlMap['description'],
+      tags: List<String>.from(yamlMap['tags']),
+      urlProject: yamlMap['urlProject'],
+      urlRepository: yamlMap['urlRepository'],
+    );
+
+    return project;
+  }
 
   Map<String, dynamic> toJson() => {
         'publishDate': publishDate,
@@ -45,7 +71,6 @@ class Project {
       };
 
   @override
-  String toString() => 
-        'title: $title \n publishDate: $publishDate \n content: $content \n titleHead: $titleHead \n img: $img \n description: $description \n tags: $tags \n urlProject: $urlProject \n urlRepository: $urlRepository';
-
+  String toString() =>
+      'title: $title \n publishDate: $publishDate \n content: $content \n titleHead: $titleHead \n img: $img \n description: $description \n tags: $tags \n urlProject: $urlProject \n urlRepository: $urlRepository';
 }
