@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/service/DB/database.dart';
 import 'package:portfolio/ui/providers/data_base_provider.dart';
 import 'package:portfolio/ui/widget/app_bar/portfolioAppBar.dart';
 import 'package:portfolio/ui/widget/fotter/fotter.dart';
@@ -15,12 +16,9 @@ class ProjectsPage extends StatefulWidget {
 
 class _ProjectsPageState extends State<ProjectsPage> {
   List<Widget> getProjects() {
-    final dataBaseProvider = Provider.of<DataBaseProvider>(context);
-
     List<Widget> projects = [];
 
-    for (var projectData
-        in dataBaseProvider.getServiceDataBase().getProjects()) {
+    for (var projectData in dataBaseConnection.getProjects()) {
       projects.add(
         Center(
           child: PreviewProject(project: projectData),

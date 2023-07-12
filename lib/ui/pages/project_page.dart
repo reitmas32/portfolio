@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/domain/models/project.dart';
+import 'package:portfolio/service/DB/database.dart';
 import 'package:portfolio/ui/providers/data_base_provider.dart';
 import 'package:portfolio/ui/tools/getTarget.dart';
 import 'package:portfolio/ui/widget/app_bar/portfolioAppBar.dart';
@@ -27,9 +28,8 @@ class _ProjectPageState extends State<ProjectPage> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    final dataBaseProvider = Provider.of<DataBaseProvider>(context);
-    if (dataBaseProvider.getServiceDataBase().existsProject(widget.title)) {
-      project = dataBaseProvider.getServiceDataBase().getProject(widget.title);
+    if (dataBaseConnection.existsProject(widget.title)) {
+      project = dataBaseConnection.getProject(widget.title);
     } else {
       context.go('/error');
     }
@@ -40,10 +40,10 @@ class _ProjectPageState extends State<ProjectPage> {
           height: size.height / 10,
           padding: EdgeInsets.all(20.0),
           color: Theme.of(context).colorScheme.primary,
-          child:  Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-              children: getTarged(project),
-            ),
+            children: getTarged(project),
+          ),
         ),
       ),
       body: Center(
@@ -77,7 +77,8 @@ class _ProjectPageState extends State<ProjectPage> {
                   lable: 'URL REPOSITORY',
                   onTap: () async {
                     if (!await launchUrl(Uri.parse(project.urlRepository))) {
-                      throw Exception('Could not launch ${project.urlRepository}');
+                      throw Exception(
+                          'Could not launch ${project.urlRepository}');
                     }
                   },
                 ),

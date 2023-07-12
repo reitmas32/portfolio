@@ -10,7 +10,7 @@ class PreviewProject extends StatefulWidget {
     required this.project,
   });
 
-  final Project project;
+  final Project? project;
 
   @override
   State<PreviewProject> createState() => _PreviewProjectState();
@@ -28,7 +28,7 @@ class _PreviewProjectState extends State<PreviewProject> {
       child: Column(
         children: [
           Image.network(
-            widget.project.img,
+            widget.project!.img,
           ),
           Container(
             padding: EdgeInsets.all(20.0),
@@ -36,13 +36,14 @@ class _PreviewProjectState extends State<PreviewProject> {
             child: Column(
               children: [
                 Text(
-                  widget.project.description,
+                  widget.project!.description,
                 ),
-                size.width > 1200
-                    ? Row(
-                        children: getTarged(widget.project),
-                      )
-                    : Container(),
+                if (size.width > 1200)
+                  Row(
+                    children: getTarged(widget.project!),
+                  )
+                else
+                  Container(),
               ],
             ),
           ),
@@ -54,7 +55,8 @@ class _PreviewProjectState extends State<PreviewProject> {
                 throw Exception('Could not launch ${widget.project.urlProject}');
               }
               */
-              context.go('/projects/${widget.project.title.replaceAll(RegExp(r"\s+"), "")}');
+              context.go(
+                  '/projects/${widget.project!.title.replaceAll(RegExp(r"\s+"), "")}');
             },
           ),
         ],

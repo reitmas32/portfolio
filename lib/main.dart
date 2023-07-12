@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/service/DB/database.dart';
 import 'package:portfolio/ui/portfolio.dart';
 import 'package:portfolio/ui/providers/data_base_provider.dart';
 import 'package:provider/provider.dart';
@@ -7,6 +8,7 @@ import 'package:url_strategy/url_strategy.dart';
 
 void main() {
   setPathUrlStrategy();
+  dataBaseConnection.loadFiles();
   runApp(const MyApp());
 }
 
