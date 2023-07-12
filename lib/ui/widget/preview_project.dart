@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/domain/models/project.dart';
-import 'package:portfolio/ui/tools/getTarget.dart';
+import 'package:portfolio/ui/tools/get_target.dart';
 import 'package:portfolio/ui/widget/button_project.dart';
 
 class PreviewProject extends StatefulWidget {

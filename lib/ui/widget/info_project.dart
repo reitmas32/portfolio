@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:portfolio/domain/models/project.dart';
-import 'package:portfolio/ui/style/markdownStyleSheet.dart';
+import 'package:portfolio/ui/style/markdown_style_sheet.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class InfoProject extends StatelessWidget {
