@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/service/DB/data_base_i.dart';
 import 'package:portfolio/service/DB/data_base_static.dart';
+import 'package:portfolio/service/DB/date_base_files.dart';
 
 class DataBaseProvider with ChangeNotifier {
-  final DataBase _dataBase = DataBaseStatic();
+  final DataBaseFiles _dataBase = DataBaseFiles();
 
+  DataBaseProvider(){
+    _dataBase.loadFiles();
+  }
 
-  DataBase getServiceDataBase () => _dataBase;
+  DataBaseFiles getServiceDataBase () => _dataBase;
 
 }
