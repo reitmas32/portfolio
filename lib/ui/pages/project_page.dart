@@ -40,18 +40,10 @@ class _ProjectPageState extends State<ProjectPage> {
           height: size.height / 10,
           padding: EdgeInsets.all(20.0),
           color: Theme.of(context).colorScheme.primary,
-          child: Column(
-            children: [
-              Text(
-                project.description,
-              ),
-              size.width > 1200
-                  ? Row(
-                      children: getTarged(project),
-                    )
-                  : Container(),
-            ],
-          ),
+          child:  Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+              children: getTarged(project),
+            ),
         ),
       ),
       body: Center(
