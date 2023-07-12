@@ -46,8 +46,8 @@ class DataBaseFiles implements DataBase {
   @override
   bool existsProject(String title) {
     bool find = false;
-    for (var _project in data) {
-      if (_project.title.replaceAll(RegExp(r"\s+"), "") == title) {
+    for (var project in data) {
+      if (project.title.replaceAll(RegExp(r"\s+"), "") == title) {
         find = true;
         break;
       }
