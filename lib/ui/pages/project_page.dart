@@ -3,13 +3,11 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/domain/models/project.dart';
 import 'package:portfolio/service/DB/database.dart';
-import 'package:portfolio/ui/providers/data_base_provider.dart';
 import 'package:portfolio/ui/tools/getTarget.dart';
 import 'package:portfolio/ui/widget/app_bar/portfolioAppBar.dart';
 import 'package:portfolio/ui/widget/button_project.dart';
 import 'package:portfolio/ui/widget/fotter/fotter.dart';
 import 'package:portfolio/ui/widget/info_project.dart';
-import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectPage extends StatefulWidget {

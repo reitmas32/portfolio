@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/service/DB/database.dart';
-import 'package:portfolio/ui/providers/data_base_provider.dart';
 import 'package:portfolio/ui/widget/app_bar/portfolioAppBar.dart';
 import 'package:portfolio/ui/widget/fotter/fotter.dart';
 import 'package:portfolio/ui/widget/preview_project.dart';
-import 'package:provider/provider.dart';
 
 class ProjectsPage extends StatefulWidget {
   const ProjectsPage({super.key});
