@@ -1,9 +1,9 @@
-title: Unicyber
+title: DuetGame
 titleHead: Duet Game
 publishDate: 10-07-2023
 img: https://raw.githubusercontent.com/reitmas32/portfolio/featstatic_files/public/assets/duet-banner.jpeg
 description: |
-  Sistema para el prestamo de equipos presentes en las Salas de UNICA
+  Duet game es una implementacion basica de un videojuego hecho con Flame Package
 tags: 
   - design
   - dev
@@ -13,4 +13,4 @@ urlRepository: https://github.com/reitmas32/Moon
 content: |
   ## **Introducción**
 
-  Sistema para el prestamo de equipos presentes en las Salas de UNICA
+  Duet game es una implementacion basica de un videojuego hecho con Flame Packages
