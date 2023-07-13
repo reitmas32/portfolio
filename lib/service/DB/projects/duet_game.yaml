@@ -1,0 +1,16 @@
+title: DuetGame
+titleHead: Duet Game
+publishDate: 01-07-2023
+img: https://raw.githubusercontent.com/reitmas32/portfolio/featstatic_files/public/assets/duet-banner.jpeg
+description: |
+  Duet game es una implementacion basica de un videojuego hecho con Flame Package
+tags: 
+  - design
+  - dev
+  - Game Engine
+urlProject: https://ambiguous-sweater-c99.notion.site/Moon-Engine-dd64f15918ca4c63b8c129dae2991d79
+urlRepository: https://github.com/reitmas32/Moon
+content: |
+  ## **Introducción**
+
+  Duet game es una implementacion basica de un videojuego hecho con Flame Packages
