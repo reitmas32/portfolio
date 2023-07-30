@@ -5,7 +5,7 @@ import 'package:portfolio/domain/models/project.dart';
 Project NextProject = Project(
   title: 'Next Package Manager',
   titleHead: 'Next Package Manager',
-  publishDate: DateTime.now(),
+  publishDate: DateTime.utc(2023, 3, 28),
   img:
       'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/next-homepage-img.png',
   description:
@@ -16,28 +16,25 @@ Project NextProject = Project(
   content: """
 **Install with PyPi**
 
-``` bash
-pip install next-pm
-```
+
+###### pip install next-pm
+
     
 **Install code stable**
-``` bash
-git clone https://github.com/reitmas32/Next.git
-```
+
+###### git clone 'https://github.com/reitmas32/Next.git'
+
 
 **Install code development**
-``` bash
-git clone https://github.com/reitmas32/Next.git
-git checkout dev
-```
+###### git clone 'https://github.com/reitmas32/Next.git' <\br>git checkout dev
+
 
 **Setup**
-``` bash
-cd HOME # if your System is Windows use %%LOCALAPPDATA%%
-mkdir .next
-cd .next/
-echo 'NEXT_DIR:<DIR_OF_NEXT_INSTALATION>
-NEXT_PACKAGES_DIR:<DIR_OF_NEXT_PACKAGES> > env.yaml
-```
+
+###### cd HOME # if your System is Windows use %%LOCALAPPDATA%%
+###### mkdir .next
+###### cd .next/
+###### echo 'NEXT_DIR:<DIR_OF_NEXT_INSTALATION>
+###### NEXT_PACKAGES_DIR:<DIR_OF_NEXT_PACKAGES> > env.yaml
       """,
 );

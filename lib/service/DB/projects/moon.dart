@@ -5,7 +5,7 @@ import 'package:portfolio/domain/models/project.dart';
 final Moon_Project = Project(
   title: 'Moon Engine',
   titleHead: 'Moon Engine',
-  publishDate: DateTime.now(),
+  publishDate: DateTime.utc(2022, 7, 30),
   img:
       'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/moon-banner.png',
   description:

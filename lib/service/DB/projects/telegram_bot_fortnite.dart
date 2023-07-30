@@ -5,11 +5,11 @@ import 'package:portfolio/domain/models/project.dart';
 Project TelegramBotProject = Project(
   title: 'Telegram Bot Fortnite',
   titleHead: 'Telegram Bot Fortnite',
-  publishDate: DateTime.now(),
+  publishDate: DateTime.utc(2023, 2, 10),
   img:
       'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/telegram_bot_fortnite.jpg',
   description: 'Bot Telegram to see the shop of Fortnite.',
-  tags: ['dev', 'Telegram Bot', 'Python'],
+  tags: ['dev', 'Bot', 'Python'],
   urlProject: 'https://github.com/reitmas32/Tele_Bot_Fortnite',
   urlRepository: 'https://github.com/reitmas32/Tele_Bot_Fortnite',
   content: """

@@ -5,7 +5,7 @@ import 'package:portfolio/domain/models/project.dart';
 Project UNICyberProject = Project(
   title: 'Unicyber',
   titleHead: 'Unicyber',
-  publishDate: DateTime.now(),
+  publishDate: DateTime.utc(2023, 7, 28),
   img:
       'https://raw.githubusercontent.com/reitmas32/UNICyber-BackEnd/main/logo-unicyber.png',
   description:
@@ -67,15 +67,19 @@ El Sistema de Préstamo de Equipos para Salas de UNICA es una aplicación diseñ
 
 Sigue los siguientes pasos para ejecutar el sistema:
 
-1. Clona el repositorio desde GitHub: `git clone https://github.com/reitmas32/UNICyber.git`
+1. Clona el repositorio desde GitHub: 
+###### git clone https://github.com/reitmas32/UNICyber.git
 
-2. Inicializar proyecto Flutter: `flutter create .`.
+2. Inicializar proyecto Flutter: 
+###### flutter create .
 
-3. Ejecuta la aplicación utilizando el comando: `flutter run -d [Device]`.
+3. Ejecuta la aplicación utilizando el comando: 
+###### flutter run -d [Device]
 
 ## Compilación
 
-Para compilar el codigo y obtener un ejecutable: `flutter build [web|linux|windows]`
+Para compilar el codigo y obtener un ejecutable: 
+###### flutter build [web|linux|windows]
 
 ## Contribuciones
 
@@ -86,5 +90,7 @@ Para compilar el codigo y obtener un ejecutable: `flutter build [web|linux|windo
 Si tienes preguntas o comentarios sobre el proyecto, no dudes en ponerte en contacto con el equipo de desarrollo a través de unihacks.mail@gmail.com.
 
 ¡Gracias por tu interés en nuestro proyecto! Esperamos que el Sistema de Préstamo de Equipos para Salas de UNICA sea de gran utilidad y facilite la administración de los recursos tecnológicos en la institución.
+
+
 """,
 );

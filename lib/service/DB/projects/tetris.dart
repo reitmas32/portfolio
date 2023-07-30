@@ -5,7 +5,7 @@ import 'package:portfolio/domain/models/project.dart';
 Project TetrisProject = Project(
   title: 'Tetris Game',
   titleHead: 'Tetris Game',
-  publishDate: DateTime.now(),
+  publishDate: DateTime.utc(2020, 3, 15),
   img:
       'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/tetris-banner.png',
   description:
