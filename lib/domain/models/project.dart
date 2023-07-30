@@ -1,5 +1,5 @@
 // ignore: avoid_web_libraries_in_flutter
-import 'dart:html';
+import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:yaml/yaml.dart';
 
@@ -40,7 +40,8 @@ class Project {
   static Future<Project> fromYamlFileWeb(String urlYamlFile) async {
     var project = Project(publishDate: DateTime.now(), tags: []);
 
-    var result = await HttpRequest.getString(urlYamlFile);
+    var response = await http.get(Uri.parse(urlYamlFile));
+    var result = response.body;
     final yamlMap = loadYaml(result);
 
     project = Project(
