@@ -32,7 +32,6 @@ class _ProjectPageState extends State<ProjectPage> {
       context.go('/error');
     }
     return Scaffold(
-      appBar: const PortfolioAppBar(),
       bottomNavigationBar: BottomAppBar(
         child: Container(
           height: size.height / 10,
@@ -44,55 +43,66 @@ class _ProjectPageState extends State<ProjectPage> {
           ),
         ),
       ),
-      body: Center(
-        child: ListView(
-          children: <Widget>[
-            Center(
-              child: Container(
-                padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  project.title.toUpperCase(),
-                  style: GoogleFonts.secularOne(fontSize: size.width / 20),
-                ),
+      body: CustomScrollView(
+        slivers: [
+          PortfolioSliverAppBar(),
+          SliverFillRemaining(
+            child: Center(
+              child: ListView(
+                children: <Widget>[
+                  Center(
+                    child: Container(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text(
+                        project.title.toUpperCase(),
+                        style:
+                            GoogleFonts.secularOne(fontSize: size.width / 20),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                        vertical: 30.0, horizontal: size.width / 10),
+                    height: 600,
+                    child: Image.network(
+                      project.img,
+                      fit: BoxFit.fitHeight,
+                    ),
+                  ),
+                  InfoProject(size: size, project: project),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ButtonProjects(
+                        lable: 'URL REPOSITORY',
+                        onTap: () async {
+                          if (!await launchUrl(
+                              Uri.parse(project.urlRepository))) {
+                            throw Exception(
+                                'Could not launch ${project.urlRepository}');
+                          }
+                        },
+                      ),
+                      ButtonProjects(
+                        lable: 'URL PROJECT',
+                        onTap: () async {
+                          if (!await launchUrl(Uri.parse(project.urlProject))) {
+                            throw Exception(
+                                'Could not launch ${project.urlProject}');
+                          }
+                        },
+                      ),
+                    ],
+                  ),
+                  const Fotter(),
+                ],
               ),
             ),
-            Container(
-              padding: EdgeInsets.symmetric(
-                  vertical: 30.0, horizontal: size.width / 10),
-              child: Image.network(
-                project.img,
-                fit: BoxFit.fitHeight,
-              ),
-            ),
-            InfoProject(size: size, project: project),
-            const SizedBox(
-              height: 50,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ButtonProjects(
-                  lable: 'URL REPOSITORY',
-                  onTap: () async {
-                    if (!await launchUrl(Uri.parse(project.urlRepository))) {
-                      throw Exception(
-                          'Could not launch ${project.urlRepository}');
-                    }
-                  },
-                ),
-                ButtonProjects(
-                  lable: 'URL PROJECT',
-                  onTap: () async {
-                    if (!await launchUrl(Uri.parse(project.urlProject))) {
-                      throw Exception('Could not launch ${project.urlProject}');
-                    }
-                  },
-                ),
-              ],
-            ),
-            const Fotter(),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

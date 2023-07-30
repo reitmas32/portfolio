@@ -16,11 +16,20 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PortfolioAppBar(),
-      body: ListView(
-        children: const [
-          HomeBody(),
-          Fotter(),
+      body: CustomScrollView(
+        slivers: [
+          const PortfolioSliverAppBar(),
+          SliverPadding(
+            padding: EdgeInsets.all(10),
+            sliver: SliverList(
+              delegate: SliverChildListDelegate(
+                [
+                  const HomeBody(),
+                  const Fotter(),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );

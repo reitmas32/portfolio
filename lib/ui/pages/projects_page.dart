@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/service/DB/database.dart';
+import 'package:portfolio/ui/widget/app_bar/button_app_bar.dart';
+import 'package:portfolio/ui/widget/app_bar/button_image.dart';
 import 'package:portfolio/ui/widget/app_bar/portfolioAppBar.dart';
 import 'package:portfolio/ui/widget/fotter/fotter.dart';
 import 'package:portfolio/ui/widget/preview_project.dart';
@@ -18,9 +20,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
 
     for (var projectData in dataBaseConnection.getProjects()) {
       projects.add(
-        Center(
-          child: PreviewProject(project: projectData),
-        ),
+        PreviewProject(project: projectData),
       );
     }
 
@@ -30,20 +30,28 @@ class _ProjectsPageState extends State<ProjectsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PortfolioAppBar(),
-      body: Center(
-        child: ListView(
-          children: <Widget>[
-            const SizedBox(
-              height: 50.0,
+      //appBar: const PortfolioAppBar(),
+      body: CustomScrollView(
+        slivers: [
+          const PortfolioSliverAppBar(),
+          SliverPadding(
+            padding: const EdgeInsets.all(10),
+            sliver: SliverList(
+              delegate: SliverChildListDelegate(
+                [
+                  const SizedBox(height: 50.0),
+                  Wrap(
+                    spacing: 10,
+                    runSpacing: 10,
+                    alignment: WrapAlignment.center,
+                    children: getProjects(),
+                  ),
+                  const Fotter(),
+                ],
+              ),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: getProjects(),
-            ),
-            const Fotter(),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
