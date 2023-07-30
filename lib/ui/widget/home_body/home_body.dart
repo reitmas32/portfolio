@@ -11,7 +11,7 @@ class HomeBody extends StatelessWidget {
   Widget getSection(double width) {
     if (width > 1200) {
       return Padding(
-        padding: const EdgeInsets.all(200.0),
+        padding: const EdgeInsets.all(100.0),
         child: Row(
           children: [
             Flexible(
@@ -23,7 +23,7 @@ class HomeBody extends StatelessWidget {
               ),
             ),
             Flexible(
-              flex: 2,
+              flex: 4,
               child: SizedBox(
                 width: width / 2,
                 //height: 300,
