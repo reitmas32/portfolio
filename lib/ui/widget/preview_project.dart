@@ -24,11 +24,13 @@ class _PreviewProjectState extends State<PreviewProject> {
     final Size size = MediaQuery.of(context).size;
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 20.0),
-      width: size.width / 1.4,
+      width: size.width > 1000 ? size.width / 3 : size.width / 1.4,
       child: Column(
         children: [
-          Image.network(
-            widget.project!.img,
+          Container(
+            child: Image.network(
+              widget.project!.img,
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(20.0),
