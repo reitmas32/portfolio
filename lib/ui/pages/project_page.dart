@@ -45,7 +45,7 @@ class _ProjectPageState extends State<ProjectPage> {
       ),
       body: CustomScrollView(
         slivers: [
-          PortfolioSliverAppBar(),
+          const PortfolioSliverAppBar(),
           SliverFillRemaining(
             child: Center(
               child: ListView(

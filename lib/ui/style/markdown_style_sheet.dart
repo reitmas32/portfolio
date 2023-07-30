@@ -30,7 +30,7 @@ MarkdownStyleSheet markdownStyleSheet(BuildContext context, Size size) {
         letterSpacing: 1.2,
         height: 1.4 // Espaciado entre letras para obtener un aspecto de código
         ),
-    codeblockPadding: EdgeInsets.all(
+    codeblockPadding: const EdgeInsets.all(
       100.0,
     ),
     codeblockDecoration: BoxDecoration(

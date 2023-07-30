@@ -19,7 +19,7 @@ List<Widget> getTarged(Project project) {
     targeds.add(
       TargedText(
         lable: targed.toUpperCase(),
-        color: listColors[index % listColors.length] ?? Colors.white,
+        color: listColors[index % listColors.length],
       ),
     );
     index++;

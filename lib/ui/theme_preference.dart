@@ -32,7 +32,7 @@ class AppTheme {
       primaryColor: Colors.green,
       textSelectionTheme: const TextSelectionThemeData(
         cursorColor: Colors.red,
-        selectionColor: const Color.fromARGB(255, 95, 129, 156),
+        selectionColor: Color.fromARGB(255, 95, 129, 156),
         selectionHandleColor: Colors.blue,
       ),
       colorScheme: const ColorScheme(

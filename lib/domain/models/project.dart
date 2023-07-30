@@ -1,4 +1,4 @@
-// ignore: avoid_web_libraries_in_flutter
+// ignore: avoid_web_libraries_in_flutter, depend_on_referenced_packages
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:yaml/yaml.dart';

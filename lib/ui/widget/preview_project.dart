@@ -27,10 +27,8 @@ class _PreviewProjectState extends State<PreviewProject> {
       width: size.width > 1000 ? size.width / 3 : size.width / 1.4,
       child: Column(
         children: [
-          Container(
-            child: Image.network(
-              widget.project!.img,
-            ),
+          Image.network(
+            widget.project!.img,
           ),
           Container(
             padding: const EdgeInsets.all(20.0),

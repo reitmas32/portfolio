@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:portfolio/domain/models/project.dart';
+// ignore: depend_on_referenced_packages
 import 'package:markdown/markdown.dart' as md;
 import 'package:portfolio/ui/providers/theme_provider.dart';
 import 'package:portfolio/ui/style/markdown_style_sheet.dart';
@@ -51,13 +52,13 @@ class CustomHeadingBuilder extends MarkdownElementBuilder {
         decoration: BoxDecoration(
           color: currentTheme.isDarkTheme()
               ? const Color.fromARGB(255, 81, 82, 83)
-              : Color.fromARGB(255, 163, 165, 167),
+              : const Color.fromARGB(255, 163, 165, 167),
           borderRadius: BorderRadius.circular(8.0),
         ),
         padding: const EdgeInsets.all(8.0),
         child: Stack(
           children: [
-            Container(
+            SizedBox(
               width: double.infinity,
               child: SelectableText(
                 data,

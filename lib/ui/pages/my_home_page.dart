@@ -20,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
         slivers: [
           const PortfolioSliverAppBar(),
           SliverPadding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             sliver: SliverList(
               delegate: SliverChildListDelegate(
                 [
