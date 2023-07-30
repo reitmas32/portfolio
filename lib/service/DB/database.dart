@@ -1,3 +1,3 @@
-import 'package:portfolio/service/DB/date_base_files.dart';
+import 'package:portfolio/service/DB/data_base_static.dart';
 
-DataBaseFiles dataBaseConnection = DataBaseFiles();
+DataBaseStatic dataBaseConnection = DataBaseStatic();
