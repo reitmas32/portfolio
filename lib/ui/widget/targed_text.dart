@@ -20,7 +20,7 @@ class TargedText extends StatelessWidget {
         style: TextStyle(
           color: color,
           fontWeight: FontWeight.w400,
-          fontSize: size.width > 700 ? 20 : 15,
+          fontSize: size.width > 700 ? 15 : 15,
         ),
       ),
     );
