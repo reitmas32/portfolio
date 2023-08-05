@@ -60,15 +60,6 @@ class _ProjectPageState extends State<ProjectPage> {
                       ),
                     ),
                   ),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                        vertical: 30.0, horizontal: size.width / 10),
-                    height: 600,
-                    child: Image.network(
-                      project.img,
-                      fit: BoxFit.fitHeight,
-                    ),
-                  ),
                   InfoProject(size: size, project: project),
                   const SizedBox(
                     height: 50,
