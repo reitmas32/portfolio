@@ -11,8 +11,8 @@ Project DuetProject = Project(
   description:
       'Juego basao en el clasico Tetris desarrollado con C++ y la biblioteca miniwin.',
   tags: ['design', 'dev', 'Game', 'Flutter'],
-  urlProject: 'https://github.com/reitmas32/Tetris',
-  urlRepository: 'https://github.com/reitmas32/Tetris',
+  urlProject: 'https://duet-test-74834.web.app/',
+  urlRepository: 'https://github.com/reitmas32/duet_game',
   content: """
 # Duet
 
@@ -33,7 +33,7 @@ Si tienes preguntas o comentarios sobre el proyecto, no dudes en ponerte en cont
 
 ¡Gracias por tu interés en nuestro proyecto! Esperamos que el Sistema de Préstamo de Equipos para Salas de UNICA sea de gran utilidad y facilite la administración de los recursos tecnológicos en la institución.
 
-¡Disfruta jugando Duet y diviértete!
+¡Disfruta jugando Duet y diviértete [Play](https://duet-test-74834.web.app/)!
 
 """,
 );
