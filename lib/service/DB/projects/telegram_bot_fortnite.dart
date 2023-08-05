@@ -13,6 +13,8 @@ Project TelegramBotProject = Project(
   urlProject: 'https://github.com/reitmas32/Tele_Bot_Fortnite',
   urlRepository: 'https://github.com/reitmas32/Tele_Bot_Fortnite',
   content: """
+![Image](https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/telegram_bot_fortnite.jpg)
+
 ## Info
 Hello Im the Bot to see Shop of Fortnite
 

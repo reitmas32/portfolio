@@ -14,6 +14,7 @@ Project DuetProject = Project(
   urlProject: 'https://duet-test-74834.web.app/',
   urlRepository: 'https://github.com/reitmas32/duet_game',
   content: """
+![Image](https://raw.githubusercontent.com/reitmas32/portfolio/featstatic_files/public/assets/duet-banner.jpeg)
 # Duet
 
 Duet es un juego de puzzle minimalista y desafiante en el que controlas dos puntos unidos por un hilo. El objetivo es navegar a través de un campo de obstáculos girando y girando el hilo para evitar chocar con las barreras.

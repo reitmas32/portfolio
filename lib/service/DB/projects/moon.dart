@@ -15,6 +15,8 @@ final Moon_Project = Project(
       'https://ambiguous-sweater-c99.notion.site/Moon-Engine-dd64f15918ca4c63b8c129dae2991d79',
   urlRepository: 'https://github.com/reitmas32/Moon',
   content: """
+![Image](https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/moon-banner.png)
+
 ## **Introducción**
 
 Moon es un Game Engine desarrollado por KEGE Studios escrito en C/C++, fue diseñado basado en la Arquitectura ECS y usando algunas funcionalidades del nuevo estándar de C++20.

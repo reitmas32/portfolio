@@ -14,6 +14,8 @@ Project NextProject = Project(
   urlProject: 'https://next-b3d34.web.app',
   urlRepository: 'https://github.com/reitmas32/Next',
   content: """
+![Image](https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/next-homepage-img.png)
+
 **Install with PyPi**
 
 

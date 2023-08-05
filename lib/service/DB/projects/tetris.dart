@@ -14,6 +14,8 @@ Project TetrisProject = Project(
   urlProject: 'https://github.com/reitmas32/Tetris',
   urlRepository: 'https://github.com/reitmas32/Tetris',
   content: """
+![Image](https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/tetris-banner.png)
+
 ## **Introducción**
 
 Juego basao en el clasico Tetris desarrollado con C++ y la biblioteca miniwin

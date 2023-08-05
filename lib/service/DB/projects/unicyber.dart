@@ -14,7 +14,8 @@ Project UNICyberProject = Project(
   urlProject: 'https://github.com/reitmas32/UNICyber',
   urlRepository: 'https://github.com/reitmas32/UNICyber',
   content: """
-# UNICyber, Sistema de Préstamo de Equipos para Salas de UNICA
+![Image](https://raw.githubusercontent.com/reitmas32/UNICyber-BackEnd/main/logo-unicyber.png)
+## UNICyber, Sistema de Préstamo de Equipos para Salas de UNICA
 
 ## Descripción
 
