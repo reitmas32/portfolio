@@ -73,8 +73,9 @@ class _ProjectPageState extends State<ProjectPage> {
                   const SizedBox(
                     height: 50,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  Wrap(
+                    //mainAxisAlignment: MainAxisAlignment.center,
+                    alignment: WrapAlignment.center,
                     children: [
                       ButtonProjects(
                         lable: 'URL REPOSITORY',
