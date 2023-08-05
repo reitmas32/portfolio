@@ -39,7 +39,7 @@ class _PreviewProjectState extends State<PreviewProject> {
                   widget.project!.description,
                 ),
                 if (size.width > 1200)
-                  Row(
+                  Wrap(
                     children: getTarged(widget.project!),
                   )
                 else
