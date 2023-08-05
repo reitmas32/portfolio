@@ -11,6 +11,7 @@ class ButtonProjects extends StatefulWidget {
 
 class _ButtonProjectsState extends State<ButtonProjects> {
   double fontSizeButton = 25.0;
+  bool _isHover = false;
 
   @override
   Widget build(BuildContext context) {
@@ -19,25 +20,26 @@ class _ButtonProjectsState extends State<ButtonProjects> {
       child: TextButton(
         style: TextButton.styleFrom(
           side: BorderSide(
-              width: 3.0, color: Theme.of(context).colorScheme.onPrimary),
+              width: 3.0,
+              color: _isHover
+                  ? Colors.blue
+                  : Theme.of(context).colorScheme.onPrimary),
           padding: const EdgeInsets.all(15.0),
         ),
         onPressed: widget.onTap,
         onHover: (isHover) {
           setState(
             () {
-              if (isHover) {
-                fontSizeButton = 30.0;
-              } else {
-                fontSizeButton = 25.0;
-              }
+              _isHover = isHover;
             },
           );
         },
         child: Text(
           widget.lable,
           style: TextStyle(
-            color: Theme.of(context).colorScheme.onPrimary,
+            color: _isHover
+                ? Colors.blue
+                : Theme.of(context).colorScheme.onPrimary,
             fontSize: fontSizeButton,
           ),
         ),
