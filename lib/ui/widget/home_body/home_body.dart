@@ -37,6 +37,9 @@ class HomeBody extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
+          height: 50,
+        ),
+        SizedBox(
           width: width / 1.4,
           child: const SelectedWork(),
         ),
