@@ -43,6 +43,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
                     runSpacing: 10,
                     alignment: WrapAlignment.center,
                     children: getProjects(),
+                    crossAxisAlignment: WrapCrossAlignment.center,
                   ),
                   const Fotter(),
                 ],
