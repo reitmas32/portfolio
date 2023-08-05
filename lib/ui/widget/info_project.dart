@@ -22,7 +22,7 @@ class InfoProject extends StatelessWidget {
   Widget build(BuildContext context) {
     final currentTheme = Provider.of<ThemeProvider>(context);
     return Container(
-      height: 1500,
+      height: MediaQuery.of(context).size.height,
       padding: EdgeInsets.symmetric(
         horizontal: size.width > 720 ? size.width / 7 : size.width / 15,
       ),
