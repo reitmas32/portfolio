@@ -58,15 +58,8 @@ class HomeBanner extends StatelessWidget {
                     getHobbies(MediaQuery.of(context).size.width)
                   ],
                 ),
-                ColorFiltered(
-                  colorFilter: ColorFilter.mode(
-                      currentTheme.isDarkTheme()
-                          ? Color.fromARGB(255, 150, 148, 148)
-                          : Color.fromARGB(255, 209, 208, 208),
-                      BlendMode.darken),
-                  child: Image.asset(
-                    'assets/programing.gif',
-                  ),
+                Image.asset(
+                  'assets/programing.gif',
                 ),
               ],
             )
