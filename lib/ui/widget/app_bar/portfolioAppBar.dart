@@ -19,7 +19,7 @@ class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
     if (width > 750) {
       _actions.add(
         const ButtonIcon(
-          url: 'https://twitter.com/rafazram',
+          url: 'https://www.linkedin.com/in/rafazamora',
           external: true,
           iconData: EvaIcons.linkedin,
         ),
