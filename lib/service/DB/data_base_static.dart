@@ -6,14 +6,18 @@ import 'package:portfolio/service/DB/projects/next.dart';
 import 'package:portfolio/service/DB/projects/telegram_bot_fortnite.dart';
 import 'package:portfolio/service/DB/projects/tetris.dart';
 import 'package:portfolio/service/DB/projects/unicyber.dart';
+import 'package:portfolio/service/DB/projects/unihacks_home.dart';
+import 'package:portfolio/service/DB/projects/yonesto_ui.dart';
 
 class DataBaseStatic implements DataBase {
   final List<Project> data = [
+    YonestoUIProject,
+    UNIHacksHomeProject,
+    UNICyberProject,
     Moon_Project,
     NextProject,
     TelegramBotProject,
     TetrisProject,
-    UNICyberProject,
     DuetProject,
   ];
 
