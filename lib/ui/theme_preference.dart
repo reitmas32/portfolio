@@ -28,7 +28,7 @@ class AppTheme {
       );
   static final ThemeData darkTheme = ThemeData(
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: const Color.fromARGB(255, 56, 53, 53),
+      scaffoldBackgroundColor: Color.fromARGB(255, 18, 18, 18),
       primaryColor: Colors.green,
       textSelectionTheme: const TextSelectionThemeData(
         cursorColor: Colors.red,
