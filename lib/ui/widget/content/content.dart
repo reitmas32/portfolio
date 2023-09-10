@@ -19,9 +19,9 @@ class Content extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Expanded(
+        const Expanded(
           flex: 2,
-          child: Container(
+          child: SizedBox(
             height: 700,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -29,38 +29,38 @@ class Content extends StatelessWidget {
               children: [
                 GradientText(
                   text: 'Rafa Zamora',
-                  gradient: const LinearGradient(colors: [
+                  gradient: LinearGradient(colors: [
                     Color.fromARGB(255, 9, 121, 232),
                     Color.fromARGB(255, 187, 0, 255)
                   ]),
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
                     'Full Stack developer',
                     style: TextStyle(fontSize: 25.0),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
                     'Desarrollador de software apasionado con 2 años de experiencia, creo en el aprendizaje constante y la colaboración en equipo.',
                     style: TextStyle(fontSize: 15.0),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 50,
                 ),
-                const SectionButton(lable: 'About'),
-                const SectionButton(lable: 'Experince'),
-                const SectionButton(lable: 'Projects'),
-                const SectionButton(lable: 'Skills'),
-                const Spacer(),
-                const Row(
+                SectionButton(lable: 'About'),
+                SectionButton(lable: 'Experince'),
+                SectionButton(lable: 'Projects'),
+                SectionButton(lable: 'Skills'),
+                Spacer(),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ContactButton(
@@ -74,7 +74,7 @@ class Content extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 50,
                 ),
               ],
