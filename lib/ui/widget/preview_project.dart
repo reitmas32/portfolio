@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/domain/models/project.dart';
-import 'package:portfolio/ui/tools/getTarget.dart';
+import 'package:portfolio/ui/tools/get_target.dart';
 import 'package:portfolio/ui/widget/button_project.dart';
 
 class PreviewProject extends StatefulWidget {
@@ -10,7 +10,7 @@ class PreviewProject extends StatefulWidget {
     required this.project,
   });
 
-  final Project project;
+  final Project? project;
 
   @override
   State<PreviewProject> createState() => _PreviewProjectState();
@@ -23,26 +23,27 @@ class _PreviewProjectState extends State<PreviewProject> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 20.0),
-      width: size.width / 1.4,
+      padding: const EdgeInsets.symmetric(vertical: 20.0),
+      width: size.width > 1000 ? size.width / 3 : size.width / 1.4,
       child: Column(
         children: [
           Image.network(
-            widget.project.img,
+            widget.project!.img,
           ),
           Container(
-            padding: EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(20.0),
             color: Colors.black,
             child: Column(
               children: [
                 Text(
-                  widget.project.description,
+                  widget.project!.description,
                 ),
-                size.width > 1200
-                    ? Row(
-                        children: getTarged(widget.project),
-                      )
-                    : Container(),
+                if (size.width > 1200)
+                  Wrap(
+                    children: getTarged(widget.project!),
+                  )
+                else
+                  Container(),
               ],
             ),
           ),
@@ -54,7 +55,8 @@ class _PreviewProjectState extends State<PreviewProject> {
                 throw Exception('Could not launch ${widget.project.urlProject}');
               }
               */
-              context.go('/projects/${widget.project.title.replaceAll(RegExp(r"\s+"), "")}');
+              context.go(
+                  '/projects/${widget.project!.title.replaceAll(RegExp(r"\s+"), "")}');
             },
           ),
         ],

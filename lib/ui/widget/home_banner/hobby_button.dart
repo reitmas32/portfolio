@@ -13,7 +13,7 @@ class HobbyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+      padding: const EdgeInsets.all(8.0),
       child: ElevatedButton(
         onPressed: () {},
         style: ButtonStyle(
@@ -30,7 +30,7 @@ class HobbyButton extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Text(
             lable,
-            style: TextStyle(fontSize: MediaQuery.of(context).size.width / 70),
+            style: const TextStyle(fontSize: 25),
           ),
         ),
       ),

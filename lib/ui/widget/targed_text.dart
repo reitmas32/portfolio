@@ -12,6 +12,7 @@ class TargedText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Text(
@@ -19,6 +20,7 @@ class TargedText extends StatelessWidget {
         style: TextStyle(
           color: color,
           fontWeight: FontWeight.w400,
+          fontSize: size.width > 700 ? 15 : 15,
         ),
       ),
     );

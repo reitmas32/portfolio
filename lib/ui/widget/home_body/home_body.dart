@@ -1,63 +1,50 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/ui/widget/home_banner/home_banner.dart';
-import 'package:portfolio/ui/widget/home_body/about_info.dart';
-import 'package:portfolio/ui/widget/home_body/selected_work.dart';
+import 'package:portfolio/ui/widget/gradiente_text.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({
     super.key,
   });
 
-  Widget getSection(double width) {
-    if (width > 1200) {
-      return Padding(
-        padding: const EdgeInsets.all(200.0),
-        child: Row(
-          children: [
-            Flexible(
-              flex: 3,
-              child: SizedBox(
-                width: width / 2,
-                //height: 300,
-                child: const SelectedWork(),
-              ),
-            ),
-            Flexible(
-              flex: 2,
-              child: SizedBox(
-                width: width / 2,
-                //height: 300,
-                child: const AboutInfo(),
-              ),
-            ),
-          ],
-        ),
-      );
-    }
-    return Column(
-      children: [
-        SizedBox(
-          width: width / 1.4,
-          child: const SelectedWork(),
-        ),
-        SizedBox(
-          width: width / 1.4,
-          //height: 300,
-          child: const AboutInfo(),
-        ),
-      ],
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const HomeBanner(),
-        //SizedBox(
-        //  height: MediaQuery.of(context).size.width > 1200 ? 200 : 50,
-        //),
-        getSection(MediaQuery.of(context).size.width),
+        Transform.scale(
+          scale: 1.3,
+          child: Image.network(
+            'https://raw.githubusercontent.com/reitmas32/portfolio/featstatic_files/assets/profile.png',
+          ),
+        ),
+        const SizedBox(
+          height: 50,
+        ),
+        GradientText(
+          text: 'Hi👋, I\'m Rafa Zamora',
+          gradient: const LinearGradient(colors: [
+            Color.fromARGB(255, 9, 121, 232),
+            Color.fromARGB(255, 187, 0, 255)
+          ]),
+          style: const TextStyle(
+            fontSize: 75.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const Text(
+          'Full Stack developer',
+          style: TextStyle(fontSize: 25.0),
+        ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height / 4 - 30,
+        ),
+        Transform.rotate(
+          angle: 3.14159265359,
+          child: const Text(
+            '☝️',
+            style: TextStyle(fontSize: 25, color: Colors.purple),
+          ),
+        ),
       ],
     );
   }

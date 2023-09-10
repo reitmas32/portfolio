@@ -7,6 +7,11 @@ class AppTheme {
       brightness: Brightness.light,
       scaffoldBackgroundColor: const Color.fromARGB(255, 212, 208, 208),
       primaryColor: Colors.green,
+      textSelectionTheme: TextSelectionThemeData(
+        cursorColor: Colors.red,
+        selectionColor: const Color.fromARGB(255, 95, 129, 156),
+        selectionHandleColor: Colors.blue.shade50,
+      ),
       colorScheme: const ColorScheme(
           brightness: Brightness.light,
           primary: Color.fromARGB(255, 239, 237, 237),
@@ -23,8 +28,13 @@ class AppTheme {
       );
   static final ThemeData darkTheme = ThemeData(
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: const Color.fromARGB(255, 56, 53, 53),
+      scaffoldBackgroundColor: Color.fromARGB(255, 18, 18, 18),
       primaryColor: Colors.green,
+      textSelectionTheme: const TextSelectionThemeData(
+        cursorColor: Colors.red,
+        selectionColor: Color.fromARGB(255, 95, 129, 156),
+        selectionHandleColor: Colors.blue,
+      ),
       colorScheme: const ColorScheme(
           brightness: Brightness.dark,
           primary: Color.fromARGB(255, 62, 61, 61),

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/ui/providers/data_base_provider.dart';
+import 'package:portfolio/service/DB/database.dart';
 import 'package:portfolio/ui/widget/app_bar/portfolioAppBar.dart';
 import 'package:portfolio/ui/widget/fotter/fotter.dart';
 import 'package:portfolio/ui/widget/preview_project.dart';
-import 'package:provider/provider.dart';
 
 class ProjectsPage extends StatefulWidget {
   const ProjectsPage({super.key});
@@ -15,16 +14,11 @@ class ProjectsPage extends StatefulWidget {
 
 class _ProjectsPageState extends State<ProjectsPage> {
   List<Widget> getProjects() {
-    final dataBaseProvider = Provider.of<DataBaseProvider>(context);
-
     List<Widget> projects = [];
 
-    for (var projectData
-        in dataBaseProvider.getServiceDataBase().getProjects()) {
+    for (var projectData in dataBaseConnection.getProjects()) {
       projects.add(
-        Center(
-          child: PreviewProject(project: projectData),
-        ),
+        PreviewProject(project: projectData),
       );
     }
 
@@ -34,20 +28,29 @@ class _ProjectsPageState extends State<ProjectsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PortfolioAppBar(),
-      body: Center(
-        child: ListView(
-          children: <Widget>[
-            const SizedBox(
-              height: 50.0,
+      //appBar: const PortfolioAppBar(),
+      body: CustomScrollView(
+        slivers: [
+          const PortfolioSliverAppBar(),
+          SliverPadding(
+            padding: const EdgeInsets.all(10),
+            sliver: SliverList(
+              delegate: SliverChildListDelegate(
+                [
+                  const SizedBox(height: 50.0),
+                  Wrap(
+                    spacing: 10,
+                    runSpacing: 10,
+                    alignment: WrapAlignment.center,
+                    children: getProjects(),
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                  ),
+                  const Fotter(),
+                ],
+              ),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: getProjects(),
-            ),
-            Fotter(),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

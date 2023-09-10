@@ -7,65 +7,84 @@ class HomeBanner extends StatelessWidget {
   });
 
   Widget getHobbies(double width) {
-    if (width > 750) {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: const [
-          HobbyButton(
-            lable: '👩‍💻 Developer',
-            backgroundColor: Colors.purple,
-          ),
-          HobbyButton(
-            lable: '🎮 Gamer',
-            backgroundColor: Colors.red,
-          ),
-          HobbyButton(
-            lable: '✏️ Writer',
-            backgroundColor: Colors.blue,
-          ),
-        ],
-      );
-    }
-    return Container();
+    return const Wrap(
+      //mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        HobbyButton(
+          lable: '👩‍💻 Developer',
+          backgroundColor: Colors.purple,
+        ),
+        HobbyButton(
+          lable: '🎮 Gamer',
+          backgroundColor: Colors.red,
+        ),
+        HobbyButton(
+          lable: '✏️ Writer',
+          backgroundColor: Colors.blue,
+        ),
+      ],
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Image.network(
-          'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/home-banner.png',
-        ),
-        Padding(
-          padding: EdgeInsets.only(
-              left: MediaQuery.of(context).size.width / 30,
-              top: MediaQuery.of(context).size.width / 5),
-          // ignore: sized_box_for_whitespace
-          child: Container(
-            width: MediaQuery.of(context).size.width / 2,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+    final size = MediaQuery.of(context).size;
+    return Padding(
+      padding: const EdgeInsets.only(top: 50),
+      child: size.width > 1100
+          ? Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text(
-                  'The personal site of',
-                  style: TextStyle(
-                      color: const Color.fromARGB(255, 35, 35, 35),
-                      fontWeight: FontWeight.bold,
-                      fontSize: MediaQuery.of(context).size.width / 50),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'The personal site of',
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.onPrimary,
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.width / 50),
+                    ),
+                    Text(
+                      'Rafael Zamora',
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.onPrimary,
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.width / 20),
+                    ),
+                    getHobbies(MediaQuery.of(context).size.width)
+                  ],
                 ),
-                Text(
-                  'Rafael Zamora',
-                  style: TextStyle(
-                      color: const Color.fromARGB(255, 35, 35, 35),
-                      fontWeight: FontWeight.bold,
-                      fontSize: MediaQuery.of(context).size.width / 20),
+                Image.asset(
+                  'assets/programing.gif',
                 ),
-                getHobbies(MediaQuery.of(context).size.width)
+              ],
+            )
+          : Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'The personal site of',
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.onPrimary,
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.width / 30),
+                    ),
+                    Text(
+                      'Rafael Zamora',
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.onPrimary,
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.width / 10),
+                    ),
+                    getHobbies(MediaQuery.of(context).size.width)
+                  ],
+                ),
               ],
             ),
-          ),
-        ),
-      ],
     );
   }
 }
