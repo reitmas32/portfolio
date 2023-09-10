@@ -1,5 +1,9 @@
+import 'package:portfolio/domain/models/experience.dart';
 import 'package:portfolio/domain/models/project.dart';
 import 'package:portfolio/service/DB/data_base_i.dart';
+import 'package:portfolio/service/DB/experiences/intructor_flutter.dart';
+import 'package:portfolio/service/DB/experiences/open_source_dev.dart';
+import 'package:portfolio/service/DB/experiences/ui_ux_tester.dart';
 import 'package:portfolio/service/DB/projects/duet_game.dart';
 import 'package:portfolio/service/DB/projects/moon.dart';
 import 'package:portfolio/service/DB/projects/next.dart';
@@ -19,6 +23,12 @@ class DataBaseStatic implements DataBase {
     TelegramBotProject,
     TetrisProject,
     DuetProject,
+  ];
+
+  final List<Experience> experiences = [
+    InstructorFlutter,
+    UXUITester,
+    OpenSourceDev,
   ];
 
   final about = """
