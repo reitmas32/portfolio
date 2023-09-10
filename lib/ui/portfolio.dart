@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/ui/pages/about_page.dart';
 import 'package:portfolio/ui/pages/error_page.dart';
-import 'package:portfolio/ui/pages/my_home_page.dart';
+import 'package:portfolio/ui/pages/home.dart';
 import 'package:portfolio/ui/pages/project_page.dart';
 import 'package:portfolio/ui/pages/projects_page.dart';
 import 'package:portfolio/ui/providers/theme_provider.dart';
@@ -26,9 +26,7 @@ class PortfolioState extends State<Portfolio> {
     routes: [
       GoRoute(
         path: "/",
-        builder: (context, state) => const MyHomePage(
-          title: 'Home',
-        ),
+        builder: (context, state) => const HomePage(),
       ),
       GoRoute(
         path: "/projects",
@@ -56,7 +54,7 @@ class PortfolioState extends State<Portfolio> {
       theme:
           currentTheme.isDarkTheme() ? AppTheme.darkTheme : AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
     );
   }
 }
