@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/ui/providers/theme_provider.dart';
 import 'package:portfolio/ui/widget/home_banner/hobby_button.dart';
-import 'package:provider/provider.dart';
 
 class HomeBanner extends StatelessWidget {
   const HomeBanner({
@@ -30,7 +28,6 @@ class HomeBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final currentTheme = Provider.of<ThemeProvider>(context);
     final size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.only(top: 50),
