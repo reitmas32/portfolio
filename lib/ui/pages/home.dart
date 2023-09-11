@@ -51,11 +51,13 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: MediaQuery.of(context).size.height / 4,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(
+            Padding(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 200,
               ),
-              child: HomeBody(),
+              child: HomeBody(
+                scrollController: _scrollController,
+              ),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height / 3 - 80,
