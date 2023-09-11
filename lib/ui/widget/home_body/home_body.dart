@@ -20,13 +20,13 @@ class HomeBody extends StatelessWidget {
         const SizedBox(
           height: 50,
         ),
-        GradientText(
-          text: 'Hi👋, I\'m Rafa Zamora',
-          gradient: const LinearGradient(colors: [
+        const GradientText(
+          text: 'Hi👋, I\'m Rafael Zamora',
+          gradient: LinearGradient(colors: [
             Color.fromARGB(255, 9, 121, 232),
             Color.fromARGB(255, 187, 0, 255)
           ]),
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 75.0,
             fontWeight: FontWeight.bold,
           ),
@@ -42,7 +42,7 @@ class HomeBody extends StatelessWidget {
           angle: 3.14159265359,
           child: const Text(
             '☝️',
-            style: TextStyle(fontSize: 25, color: Colors.purple),
+            style: TextStyle(fontSize: 50, color: Colors.purple),
           ),
         ),
       ],
