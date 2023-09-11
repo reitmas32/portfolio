@@ -4,11 +4,14 @@ class GradientText extends StatelessWidget {
   final String text;
   final LinearGradient gradient;
   final TextStyle style;
+  final TextAlign? textAlign;
 
   const GradientText({
+    super.key,
     required this.text,
     required this.gradient,
     required this.style,
+    this.textAlign,
   });
 
   @override
@@ -22,6 +25,7 @@ class GradientText extends StatelessWidget {
         style: style.copyWith(
           color: Colors.white,
         ),
+        textAlign: textAlign,
       ),
     );
   }

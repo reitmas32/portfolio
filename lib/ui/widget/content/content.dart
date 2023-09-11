@@ -116,7 +116,7 @@ class Content extends StatelessWidget {
         ),
         Expanded(
           flex: 3,
-          child: Container(
+          child: SizedBox(
             height: MediaQuery.of(context).size.height - 50,
             width: MediaQuery.of(context).size.width / 2,
             child: ScrollablePositionedList.builder(

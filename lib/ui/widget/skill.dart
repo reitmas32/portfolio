@@ -19,11 +19,11 @@ class _SkillState extends State<Skill> {
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return MouseRegion(
       onHover: ((event) {
         setState(() {
           isHover = true;
-          print(widget.skill.logoSecondary);
         });
       }),
       onExit: ((event) {
@@ -32,18 +32,21 @@ class _SkillState extends State<Skill> {
         });
       }),
       child: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(1.0),
         child: Column(
           children: [
             SvgPicture.network(
               widget.skill
                   .logo!, // Reemplaza 'your_image.svg' con la ruta de tu imagen SVG
-              width: 80,
+              //width: 5,
+              height: 80,
             ),
             AnimatedDefaultTextStyle(
               duration: const Duration(milliseconds: 200),
               style: GoogleFonts.montserrat(
-                color: isHover ? Colors.white : Colors.transparent,
+                color: isHover || size.width < 700
+                    ? Colors.white
+                    : Colors.transparent,
               ),
               child: Text(
                 widget.skill.name,
