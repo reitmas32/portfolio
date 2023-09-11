@@ -1,6 +1,7 @@
 // ignore: avoid_web_libraries_in_flutter, depend_on_referenced_packages
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
+import 'package:portfolio/domain/models/tecnology.dart';
 import 'package:yaml/yaml.dart';
 
 class Project {
@@ -13,6 +14,7 @@ class Project {
   final List<String> tags;
   final String urlProject;
   final String urlRepository;
+  final List<Technology> tecnologies;
 
   Project({
     this.title = '',
@@ -20,6 +22,7 @@ class Project {
     required this.publishDate,
     this.img = '',
     this.description = '',
+    required this.tecnologies,
     required this.tags,
     this.urlProject = '',
     this.urlRepository = '',
@@ -34,11 +37,16 @@ class Project {
         img = json['img'],
         description = json['description'],
         tags = List.from(json['tags']),
+        tecnologies = List.from(json['tecnologies']),
         urlProject = json['urlProject'],
         urlRepository = json['urlRepository'];
 
   static Future<Project> fromYamlFileWeb(String urlYamlFile) async {
-    var project = Project(publishDate: DateTime.now(), tags: []);
+    var project = Project(
+      publishDate: DateTime.now(),
+      tags: [],
+      tecnologies: [],
+    );
 
     var response = await http.get(Uri.parse(urlYamlFile));
     var result = response.body;
@@ -54,6 +62,7 @@ class Project {
       tags: List<String>.from(yamlMap['tags']),
       urlProject: yamlMap['urlProject'],
       urlRepository: yamlMap['urlRepository'],
+      tecnologies: yamlMap['tecnologies'],
     );
 
     return project;
@@ -69,6 +78,7 @@ class Project {
         'tags': tags,
         'urlProject': urlProject,
         'urlRepository': urlRepository,
+        'tecnologies': tecnologies,
       };
 
   @override
