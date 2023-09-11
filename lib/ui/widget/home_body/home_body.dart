@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/ui/widget/gradiente_text.dart';
 
-class HomeBody extends StatelessWidget {
+class HomeBody extends StatefulWidget {
   const HomeBody({
     super.key,
+    required this.scrollController,
   });
 
+  final ScrollController scrollController;
+
+  @override
+  State<HomeBody> createState() => _HomeBodyState();
+}
+
+class _HomeBodyState extends State<HomeBody> {
+  bool isHover = false;
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -40,9 +50,43 @@ class HomeBody extends StatelessWidget {
         ),
         Transform.rotate(
           angle: 3.14159265359,
-          child: const Text(
-            '☝️',
-            style: TextStyle(fontSize: 50, color: Colors.purple),
+          child: MouseRegion(
+            onHover: ((event) {
+              setState(() {
+                isHover = true;
+              });
+            }),
+            onExit: ((event) {
+              setState(() {
+                isHover = false;
+              });
+            }),
+            child: InkWell(
+              onTap: () {
+                widget.scrollController.animateTo(
+                  size.height + 200,
+                  duration: const Duration(
+                    milliseconds: 500,
+                  ),
+                  curve: Curves.linear,
+                );
+              },
+              hoverColor: Colors.transparent,
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              child: AnimatedDefaultTextStyle(
+                duration: const Duration(
+                  milliseconds: 100,
+                ),
+                style: TextStyle(
+                  fontSize: isHover ? 70 : 50,
+                  color: Colors.purple,
+                ),
+                child: const Text(
+                  '☝️',
+                ),
+              ),
+            ),
           ),
         ),
       ],
