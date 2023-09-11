@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/ui/widget/content/content.dart';
+import 'package:portfolio/ui/widget/fotter/fotter.dart';
 import 'package:portfolio/ui/widget/home_body/home_body.dart';
 import 'package:portfolio/ui/widget/mouse_decoration.dart';
 
@@ -42,18 +43,23 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
+      drawer: size.width <= 700 ? const Drawer() : null,
+      appBar: size.width <= 700 ? AppBar() : null,
       body: MouseDecoration(
         size: MediaQuery.of(context).size,
         child: ListView(
           controller: _scrollController,
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height / 4,
+              height: size.width > 700
+                  ? MediaQuery.of(context).size.height / 4
+                  : MediaQuery.of(context).size.height / 10,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 200,
+              padding: EdgeInsets.symmetric(
+                horizontal: size.width > 700 ? 200 : 30,
               ),
               child: HomeBody(
                 scrollController: _scrollController,
@@ -62,15 +68,25 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: MediaQuery.of(context).size.height / 3 - 80,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 200,
+            if (size.width > 700)
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: size.width > 700 ? 200 : 30,
+                ),
+                child: Content(
+                  isFullScroll: isFullScroll,
+                  scrollController: _scrollController,
+                ),
               ),
-              child: Content(
-                isFullScroll: isFullScroll,
-                scrollController: _scrollController,
+            if (size.width < 700)
+              const Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 30,
+                ),
+                child: Column(
+                  children: Content.elements,
+                ),
               ),
-            )
           ],
         ),
       ),

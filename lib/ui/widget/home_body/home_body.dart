@@ -1,4 +1,6 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/ui/widget/contact_button.dart';
 import 'package:portfolio/ui/widget/gradiente_text.dart';
 
 class HomeBody extends StatefulWidget {
@@ -30,16 +32,17 @@ class _HomeBodyState extends State<HomeBody> {
         const SizedBox(
           height: 50,
         ),
-        const GradientText(
+        GradientText(
           text: 'Hi👋, I\'m Rafael Zamora',
-          gradient: LinearGradient(colors: [
+          gradient: const LinearGradient(colors: [
             Color.fromARGB(255, 9, 121, 232),
             Color.fromARGB(255, 187, 0, 255)
           ]),
           style: TextStyle(
-            fontSize: 75.0,
+            fontSize: size.width > 700 ? 75.0 : 40,
             fontWeight: FontWeight.bold,
           ),
+          textAlign: TextAlign.center,
         ),
         const Text(
           'Full Stack developer',
@@ -48,6 +51,26 @@ class _HomeBodyState extends State<HomeBody> {
         SizedBox(
           height: MediaQuery.of(context).size.height / 4 - 30,
         ),
+        if (size.width < 700)
+          const SizedBox(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ContactButton(
+                  iconData: EvaIcons.linkedinOutline,
+                  url: 'https://www.linkedin.com/in/rafazamora/',
+                ),
+                ContactButton(
+                  iconData: EvaIcons.twitterOutline,
+                  url: 'https://twitter.com/rafazram',
+                ),
+                ContactButton(
+                  iconData: EvaIcons.githubOutline,
+                  url: 'https://github.com/reitmas32',
+                ),
+              ],
+            ),
+          ),
         Transform.rotate(
           angle: 3.14159265359,
           child: MouseRegion(
@@ -64,7 +87,7 @@ class _HomeBodyState extends State<HomeBody> {
             child: InkWell(
               onTap: () {
                 widget.scrollController.animateTo(
-                  size.height + 200,
+                  size.width > 700 ? size.height + 200 : size.height - 50,
                   duration: const Duration(
                     milliseconds: 500,
                   ),
