@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/ui/widget/content/content.dart';
-import 'package:portfolio/ui/widget/fotter/fotter.dart';
 import 'package:portfolio/ui/widget/home_body/home_body.dart';
 import 'package:portfolio/ui/widget/mouse_decoration.dart';
 
