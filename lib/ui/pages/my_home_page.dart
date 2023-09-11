@@ -24,7 +24,6 @@ class _MyHomePageState extends State<MyHomePage> {
             sliver: SliverList(
               delegate: SliverChildListDelegate(
                 [
-                  const HomeBody(),
                   const Fotter(),
                 ],
               ),
