@@ -44,8 +44,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      drawer: size.width <= 700 ? const Drawer() : null,
-      appBar: size.width <= 700 ? AppBar() : null,
       body: MouseDecoration(
         size: MediaQuery.of(context).size,
         child: ListView(
