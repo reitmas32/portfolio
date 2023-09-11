@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/ui/widget/app_bar/portfolioAppBar.dart';
 import 'package:portfolio/ui/widget/fotter/fotter.dart';
-import 'package:portfolio/ui/widget/home_body/home_body.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -24,7 +23,6 @@ class _MyHomePageState extends State<MyHomePage> {
             sliver: SliverList(
               delegate: SliverChildListDelegate(
                 [
-                  const HomeBody(),
                   const Fotter(),
                 ],
               ),

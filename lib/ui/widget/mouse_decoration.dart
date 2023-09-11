@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MouseDecoration extends StatefulWidget {
-  const MouseDecoration({super.key, required this.child});
+  const MouseDecoration({super.key, required this.child, required this.size});
+
+  final Size size;
 
   @override
   _MouseDecorationState createState() => _MouseDecorationState();
@@ -12,6 +14,14 @@ class MouseDecoration extends StatefulWidget {
 class _MouseDecorationState extends State<MouseDecoration> {
   double _x = 0.0;
   double _y = 0.0;
+
+  @override
+  void initState() {
+    _x = widget.size.width / 2;
+    _y = widget.size.height / 2;
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +44,8 @@ class _MouseDecorationState extends State<MouseDecoration> {
                 shape: BoxShape.circle,
                 gradient: RadialGradient(
                   colors: [
-                    Color.fromARGB(20, 102, 128, 151),
-                    Colors.transparent
+                    Color.fromARGB(21, 144, 139, 139),
+                    Colors.transparent,
                   ],
                   stops: [0.0, 1.0],
                 ),

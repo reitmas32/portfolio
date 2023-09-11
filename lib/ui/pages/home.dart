@@ -44,21 +44,34 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: MouseDecoration(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 200.0),
-          child: ListView(
-            controller: _scrollController,
-            children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 4,
+        size: MediaQuery.of(context).size,
+        child: ListView(
+          controller: _scrollController,
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 4,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 200,
               ),
-              const HomeBody(),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 3 - 80,
+              child: HomeBody(
+                scrollController: _scrollController,
               ),
-              Content(isFullScroll: isFullScroll)
-            ],
-          ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 3 - 80,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 200,
+              ),
+              child: Content(
+                isFullScroll: isFullScroll,
+                scrollController: _scrollController,
+              ),
+            )
+          ],
         ),
       ),
     );

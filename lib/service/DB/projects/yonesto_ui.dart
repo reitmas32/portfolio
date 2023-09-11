@@ -1,8 +1,12 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:portfolio/domain/models/project.dart';
+import 'package:portfolio/service/DB/tecnologies.dart';
 
 Project YonestoUIProject = Project(
+  tecnologies: [
+    Tecnologies.flutter,
+  ],
   title: 'YonestoUI',
   titleHead: 'YonestoUI',
   publishDate: DateTime.utc(2023, 8, 27),
@@ -11,7 +15,7 @@ Project YonestoUIProject = Project(
   description:
       'Tiendita App es una aplicación multiplataforma desarrollada en Flutter que permite a los usuarios comprar productos de una tiendita de forma rápida y sencilla. Esta aplicación es ideal para pequeñas tiendas locales que desean tener una presencia en línea y ofrecer a sus clientes una experiencia de compra conveniente.',
   tags: ['design', 'dev', 'flutter'],
-  urlProject: 'https://yonesto-experiment.onrender.com/home',
+  urlProject: 'https://yonesto-experiment.onrender.com',
   urlRepository: 'https://github.com/reitmas32/yonesto_ui',
   content: """
 # Tiendita App

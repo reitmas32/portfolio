@@ -4,9 +4,11 @@ class SectionButton extends StatefulWidget {
   const SectionButton({
     super.key,
     required this.lable,
+    required this.onTap,
   });
 
   final String lable;
+  final VoidCallback onTap;
 
   @override
   State<SectionButton> createState() => _SectionButtonState();
@@ -16,19 +18,19 @@ class _SectionButtonState extends State<SectionButton> {
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onHover: ((event) {
-        setState(() {
-          isHover = true;
-        });
-      }),
-      onExit: ((event) {
-        setState(() {
-          isHover = false;
-        });
-      }),
-      child: GestureDetector(
-        onTap: (() => print('Hola')),
+    return GestureDetector(
+      onTap: widget.onTap,
+      child: MouseRegion(
+        onHover: ((event) {
+          setState(() {
+            isHover = true;
+          });
+        }),
+        onExit: ((event) {
+          setState(() {
+            isHover = false;
+          });
+        }),
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 10,

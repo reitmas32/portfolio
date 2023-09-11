@@ -1,8 +1,12 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:portfolio/domain/models/project.dart';
+import 'package:portfolio/service/DB/tecnologies.dart';
 
 Project TetrisProject = Project(
+  tecnologies: [
+    Tecnologies.cpp,
+  ],
   title: 'Tetris Game',
   titleHead: 'Tetris Game',
   publishDate: DateTime.utc(2020, 3, 15),
