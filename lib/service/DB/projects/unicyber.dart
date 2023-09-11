@@ -1,13 +1,20 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:portfolio/domain/models/project.dart';
+import 'package:portfolio/service/DB/tecnologies.dart';
 
 Project UNICyberProject = Project(
+  tecnologies: [
+    Tecnologies.golang,
+    Tecnologies.gin,
+    Tecnologies.docker,
+    Tecnologies.flutter,
+  ],
   title: 'Unicyber',
   titleHead: 'Unicyber',
   publishDate: DateTime.utc(2023, 7, 28),
   img:
-      'https://raw.githubusercontent.com/reitmas32/UNICyber-BackEnd/main/logo-unicyber.png',
+      'https://raw.githubusercontent.com/reitmas32/UNICyber-BackEnd/main/unicyber-example.png',
   description:
       'El Sistema de Préstamo de Equipos para Salas de UNICA es una aplicación diseñada para administrar el préstamo de equipos de computo. Este sistema proporciona un conjunto de operaciones que permiten la gestión de cuentas de usuario, la creación y mantenimiento de aulas, el registro y seguimiento de alumnos, el control de préstamos de equipos y la generación de estadísticas.',
   tags: ['design', 'dev', 'Python', 'Flutter'],

@@ -1,8 +1,12 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:portfolio/domain/models/project.dart';
+import 'package:portfolio/service/DB/tecnologies.dart';
 
 Project TelegramBotProject = Project(
+  tecnologies: [
+    Tecnologies.python,
+  ],
   title: 'Telegram Bot Fortnite',
   titleHead: 'Telegram Bot Fortnite',
   publishDate: DateTime.utc(2023, 2, 10),

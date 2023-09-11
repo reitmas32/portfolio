@@ -1,8 +1,12 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:portfolio/domain/models/project.dart';
+import 'package:portfolio/service/DB/tecnologies.dart';
 
 Project UNIHacksHomeProject = Project(
+  tecnologies: [
+    Tecnologies.flutter,
+  ],
   title: 'UNIHacks',
   titleHead: 'UNIHacks',
   publishDate: DateTime.utc(2023, 9, 3),

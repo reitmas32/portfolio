@@ -1,8 +1,13 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:portfolio/domain/models/project.dart';
+import 'package:portfolio/service/DB/tecnologies.dart';
 
 Project NextProject = Project(
+  tecnologies: [
+    Tecnologies.cpp,
+    Tecnologies.python,
+  ],
   title: 'Next Package Manager',
   titleHead: 'Next Package Manager',
   publishDate: DateTime.utc(2023, 3, 28),

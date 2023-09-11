@@ -1,8 +1,10 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:portfolio/domain/models/project.dart';
+import 'package:portfolio/service/DB/tecnologies.dart';
 
 final Moon_Project = Project(
+  tecnologies: [Tecnologies.cpp],
   title: 'Moon Engine',
   titleHead: 'Moon Engine',
   publishDate: DateTime.utc(2022, 7, 30),
