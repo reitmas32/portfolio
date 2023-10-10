@@ -12,7 +12,8 @@ Project TelegramBotProject = Project(
   publishDate: DateTime.utc(2023, 2, 10),
   img:
       'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/telegram_bot_fortnite.jpg',
-  description: 'Bot Telegram to see the shop of Fortnite.',
+  description:
+      'Fortnite Store Telegram Bot: A custom chatbot designed to enhance the Fortnite gaming experience. It allows users to explore the in-game store, check out the latest items, skins, emotes, and more directly in their Telegram chat. The bot provides real-time updates',
   tags: ['dev', 'Bot', 'Python'],
   urlProject: 'https://github.com/reitmas32/Tele_Bot_Fortnite',
   urlRepository: 'https://github.com/reitmas32/Tele_Bot_Fortnite',

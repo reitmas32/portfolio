@@ -1,15 +1,15 @@
 import 'package:portfolio/domain/models/experience.dart';
 
 Experience InstructorFlutter = Experience(
-  start: 'MARZO 2023',
-  end: 'ABRIL 2023',
-  title: 'Instructor de Curso Flutter',
+  start: 'MARCH 2023',
+  end: 'AUGUST 2023',
+  title: 'Flutter Course Instructor',
   company: 'FI UNAM',
   description: """
-Dirigí un curso básico de Flutter en la UNAM, introduciendo a estudiantes a la creación de aplicaciones con este versátil framework de Google. A lo largo del curso, realizamos tres proyectos clave: 
+I led a basic Flutter course at UNAM, introducing students to the creation of applications with this versatile Google framework. Throughout the course, we carried out three key projects: 
 
-- Calculadora Móvil 
-- Web Personal
-- Clone GUI de ChatGPT
+- Movil Calculator
+- Personal Web
+- ChatGPT UI clone
 """,
 );

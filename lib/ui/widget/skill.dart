@@ -32,7 +32,7 @@ class _SkillState extends State<Skill> {
         });
       }),
       child: Padding(
-        padding: const EdgeInsets.all(1.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
             SvgPicture.network(

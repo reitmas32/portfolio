@@ -13,7 +13,7 @@ Project YonestoUIProject = Project(
   img:
       'https://raw.githubusercontent.com/reitmas32/yonesto_ui/main/assets/ui_store.png',
   description:
-      'Tiendita App es una aplicación multiplataforma desarrollada en Flutter que permite a los usuarios comprar productos de una tiendita de forma rápida y sencilla. Esta aplicación es ideal para pequeñas tiendas locales que desean tener una presencia en línea y ofrecer a sus clientes una experiencia de compra conveniente.',
+      'Yonesto is a cross-platform application developed in Flutter that allows users to quickly and easily purchase products from a small neighborhood store. This application is ideal for small local shops that want to have an online presence and provide their customers with a convenient shopping experience.',
   tags: ['design', 'dev', 'flutter'],
   urlProject: 'https://yonesto-experiment.onrender.com',
   urlRepository: 'https://github.com/reitmas32/yonesto_ui',

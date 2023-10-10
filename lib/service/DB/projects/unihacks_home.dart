@@ -13,7 +13,7 @@ Project UNIHacksHomeProject = Project(
   img:
       'https://raw.githubusercontent.com/reitmas32/home/main/assets/home_dark.png',
   description:
-      'Somos un equipo diverso de estudiantes unidos por la pasión por la tecnología y la innovación, colaborando para abordar desafíos en nuestra comunidad universitaria.',
+      'We are a diverse team of students united by a passion for technology and innovation, collaborating to address challenges in our university community.',
   tags: ['design', 'dev', 'flutter'],
   urlProject: 'https://unihacks.onrender.com',
   urlRepository: 'https://github.com/reitmas32/home',

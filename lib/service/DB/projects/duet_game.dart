@@ -5,13 +5,13 @@ import 'package:portfolio/service/DB/tecnologies.dart';
 
 Project DuetProject = Project(
   tecnologies: [Tecnologies.flutter],
-  title: 'Duet Game',
+  title: 'Duet Clone Game',
   titleHead: 'Duet Game',
   publishDate: DateTime.utc(2023, 6, 15),
   img:
       'https://raw.githubusercontent.com/reitmas32/portfolio/featstatic_files/public/assets/duet-banner.jpeg',
   description:
-      'Juego basao en el clasico Tetris desarrollado con C++ y la biblioteca miniwin.',
+      'Duet is a minimalist and challenging puzzle game in which you control two points connected by a thread. The goal is to navigate through an obstacle field by rotating and twisting the thread to avoid colliding with the barriers.',
   tags: ['design', 'dev', 'Game', 'Flutter'],
   urlProject: 'https://duet-test-74834.web.app/',
   urlRepository: 'https://github.com/reitmas32/duet_game',
@@ -19,7 +19,7 @@ Project DuetProject = Project(
 ![Image](https://raw.githubusercontent.com/reitmas32/portfolio/featstatic_files/public/assets/duet-banner.jpeg)
 # Duet
 
-Duet es un juego de puzzle minimalista y desafiante en el que controlas dos puntos unidos por un hilo. El objetivo es navegar a través de un campo de obstáculos girando y girando el hilo para evitar chocar con las barreras.
+Duet is a minimalist and challenging puzzle game in which you control two points connected by a thread. The goal is to navigate through an obstacle field by rotating and twisting the thread to avoid colliding with the barriers.
 
 ## Características
 

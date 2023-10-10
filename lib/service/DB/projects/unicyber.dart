@@ -16,7 +16,7 @@ Project UNICyberProject = Project(
   img:
       'https://raw.githubusercontent.com/reitmas32/UNICyber-BackEnd/main/unicyber-example.png',
   description:
-      'El Sistema de Préstamo de Equipos para Salas de UNICA es una aplicación diseñada para administrar el préstamo de equipos de computo. Este sistema proporciona un conjunto de operaciones que permiten la gestión de cuentas de usuario, la creación y mantenimiento de aulas, el registro y seguimiento de alumnos, el control de préstamos de equipos y la generación de estadísticas.',
+      'The Equipment Loan System for UNICA\'s Rooms is an application designed to manage the loan of computer equipment. This system provides a set of operations that allow user account management, the creation and maintenance of classrooms, student registration and tracking, equipment loan control, and statistics generation.',
   tags: ['design', 'dev', 'Python', 'Flutter'],
   urlProject: 'https://github.com/reitmas32/UNICyber',
   urlRepository: 'https://github.com/reitmas32/UNICyber',
