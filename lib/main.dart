@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/ui/portfolio.dart';
 import 'package:portfolio/ui/providers/data_base_provider.dart';
+import 'package:portfolio/ui/providers/lang_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:portfolio/ui/providers/theme_provider.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 void main() async {
   setPathUrlStrategy();
-  runApp(const MyApp());
+  runApp(ProviderScope(child: const MyApp()));
 }
 
 class MyApp extends StatefulWidget {
@@ -34,12 +36,6 @@ class MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider.value(
-      value: themeChangeProvider,
-      child: ChangeNotifierProvider.value(
-        value: dataBaseProvider,
-        child: const Portfolio(),
-      ),
-    );
+    return const Portfolio();
   }
 }
