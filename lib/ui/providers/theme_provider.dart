@@ -13,6 +13,5 @@ class ThemeProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  bool isDarkTheme () => _theme == ThemePreference.DARK;
-
+  bool isDarkTheme() => _theme == ThemePreference.DARK;
 }

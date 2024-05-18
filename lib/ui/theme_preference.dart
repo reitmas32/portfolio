@@ -27,28 +27,44 @@ class AppTheme {
       //Color colorButtonAppBar = Colors.white
       );
   static final ThemeData darkTheme = ThemeData(
+    brightness: Brightness.dark,
+    scaffoldBackgroundColor: const Color.fromARGB(255, 18, 18, 18),
+    primaryColor: Colors.green,
+    appBarTheme:
+        const AppBarTheme(backgroundColor: Color.fromARGB(255, 18, 18, 18)),
+    textSelectionTheme: const TextSelectionThemeData(
+      cursorColor: Colors.red,
+      selectionColor: Color.fromARGB(255, 95, 129, 156),
+      selectionHandleColor: Colors.blue,
+    ),
+    colorScheme: const ColorScheme(
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: Color.fromARGB(255, 18, 18, 18),
-      primaryColor: Colors.green,
-      textSelectionTheme: const TextSelectionThemeData(
-        cursorColor: Colors.red,
-        selectionColor: Color.fromARGB(255, 95, 129, 156),
-        selectionHandleColor: Colors.blue,
+      primary: Color.fromARGB(255, 62, 61, 61),
+      onPrimary: Color.fromARGB(255, 255, 255, 255),
+      secondary: Color.fromARGB(255, 89, 106, 135),
+      onSecondary: Color.fromARGB(255, 12, 12, 12),
+      error: Color.fromARGB(255, 220, 15, 15),
+      onError: Color.fromARGB(255, 255, 255, 255),
+      surface: Color.fromARGB(255, 255, 255, 255),
+      onSurface: Color.fromARGB(255, 255, 255, 255),
+    ),
+    dialogTheme: DialogTheme(
+      backgroundColor: const Color.fromARGB(255, 18, 18, 18),
+      titleTextStyle: const TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+      ), // Style for the title
+      contentTextStyle: const TextStyle(
+        color: Colors.white70,
+        fontSize: 16,
       ),
-      colorScheme: const ColorScheme(
-          brightness: Brightness.dark,
-          primary: Color.fromARGB(255, 62, 61, 61),
-          onPrimary: Color.fromARGB(255, 255, 255, 255),
-          secondary: Color.fromARGB(255, 89, 106, 135),
-          onSecondary: Color.fromARGB(255, 12, 12, 12),
-          error: Color.fromARGB(255, 220, 15, 15),
-          onError: Color.fromARGB(255, 255, 255, 255),
-          background: Color.fromARGB(255, 255, 255, 255),
-          onBackground: Color.fromARGB(255, 255, 255, 255),
-          surface: Color.fromARGB(255, 255, 255, 255),
-          onSurface: Color.fromARGB(255, 255, 255, 255))
-      //Color colorButtonAppBar = Colors.white
-      );
+
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10), // Border radius for the dialog
+      ),
+    ),
+    //Color colorButtonAppBar = Colors.white
+  );
 }
 
 class ThemePreference {

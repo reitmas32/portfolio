@@ -1,9 +1,11 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio/ui/providers/lang_provider.dart';
 import 'package:portfolio/ui/widget/contact_button.dart';
 import 'package:portfolio/ui/widget/gradiente_text.dart';
 
-class HomeBody extends StatefulWidget {
+class HomeBody extends ConsumerStatefulWidget {
   const HomeBody({
     super.key,
     required this.scrollController,
@@ -12,14 +14,15 @@ class HomeBody extends StatefulWidget {
   final ScrollController scrollController;
 
   @override
-  State<HomeBody> createState() => _HomeBodyState();
+  ConsumerState<HomeBody> createState() => _HomeBodyState();
 }
 
-class _HomeBodyState extends State<HomeBody> {
+class _HomeBodyState extends ConsumerState<HomeBody> {
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final lang = ref.watch(langProvider);
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -31,7 +34,7 @@ class _HomeBodyState extends State<HomeBody> {
           height: 50,
         ),
         GradientText(
-          text: 'Hi👋, I\'m Rafael Zamora',
+          text: LangsSupported.data["hi"]![lang] ?? "",
           gradient: const LinearGradient(colors: [
             Color.fromARGB(255, 9, 121, 232),
             Color.fromARGB(255, 187, 0, 255)
@@ -42,9 +45,9 @@ class _HomeBodyState extends State<HomeBody> {
           ),
           textAlign: TextAlign.center,
         ),
-        const Text(
-          'Software developer',
-          style: TextStyle(fontSize: 25.0),
+        Text(
+          LangsSupported.data["title"]![lang] ?? "",
+          style: const TextStyle(fontSize: 25.0),
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height / 4 - 30,

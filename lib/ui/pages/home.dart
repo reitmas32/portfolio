@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio/ui/providers/lang_provider.dart';
 import 'package:portfolio/ui/widget/content/content.dart';
 import 'package:portfolio/ui/widget/home_body/home_body.dart';
 import 'package:portfolio/ui/widget/mouse_decoration.dart';
@@ -44,6 +46,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        title: const PortfolioAppBar(),
+      ),
       body: MouseDecoration(
         size: MediaQuery.of(context).size,
         child: ListView(
@@ -51,7 +56,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             SizedBox(
               height: size.width > 700
-                  ? MediaQuery.of(context).size.height / 4
+                  ? MediaQuery.of(context).size.height / 6
                   : MediaQuery.of(context).size.height / 10,
             ),
             Padding(
@@ -87,6 +92,117 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class PortfolioAppBar extends StatelessWidget {
+  const PortfolioAppBar({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox(
+      child: Padding(
+        padding: EdgeInsets.only(right: 100),
+        child: LangButton(),
+      ),
+    );
+  }
+}
+
+class LangButton extends ConsumerWidget {
+  const LangButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final currentLang = ref.watch(langProvider);
+    return Align(
+      alignment: Alignment.centerRight,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(20.0),
+          child: Padding(
+            padding: const EdgeInsets.all(2.0),
+            child: Image.network(
+              LangsSupported.langs_images[currentLang]!,
+              height: 40,
+            ),
+          ),
+          onTap: () {
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return const SelectLangDialog();
+              },
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SelectLangDialog extends StatelessWidget {
+  const SelectLangDialog({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const AlertDialog(
+      content: SizedBox(
+        width: 100,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SelectableLangButton(
+              lang: LangsSupported.ENGLISH,
+            ),
+            SelectableLangButton(
+              lang: LangsSupported.SPANISH,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class SelectableLangButton extends ConsumerWidget {
+  const SelectableLangButton({
+    super.key,
+    required this.lang,
+  });
+
+  final String lang;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return InkWell(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(2.0),
+            child: Image.network(
+              LangsSupported.langs_images[lang]!,
+              height: 40,
+            ),
+          ),
+          Text(lang)
+        ],
+      ),
+      onTap: () {
+        ref.read(langProvider.notifier).setLang(lang);
+        Navigator.pop(context);
+      },
     );
   }
 }

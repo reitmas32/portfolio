@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/service/DB/database.dart';
+import 'package:portfolio/ui/providers/lang_provider.dart';
 
-class AboutMeSection extends StatelessWidget {
+class AboutMeSection extends ConsumerWidget {
   const AboutMeSection({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final currentLang = ref.watch(langProvider);
     return SizedBox(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,7 +24,7 @@ class AboutMeSection extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 30, top: 30),
             child: Text(
-              dataBaseConnection.about,
+              dataBaseConnection.about[currentLang]!,
               style: GoogleFonts.montserrat(
                 height: 1.5,
               ),

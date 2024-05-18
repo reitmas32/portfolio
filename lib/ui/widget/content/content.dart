@@ -1,5 +1,8 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio/service/DB/database.dart';
+import 'package:portfolio/ui/providers/lang_provider.dart';
 import 'package:portfolio/ui/widget/contact_button.dart';
 import 'package:portfolio/ui/widget/content/about_me.dart';
 import 'package:portfolio/ui/widget/content/experience.dart';
@@ -9,7 +12,7 @@ import 'package:portfolio/ui/widget/gradiente_text.dart';
 import 'package:portfolio/ui/widget/section_button.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-class Content extends StatelessWidget {
+class Content extends ConsumerWidget {
   Content({
     super.key,
     required this.isFullScroll,
@@ -29,8 +32,9 @@ class Content extends StatelessWidget {
   ];
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.of(context).size;
+    final currentLang = ref.watch(langProvider);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
@@ -53,10 +57,10 @@ class Content extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
-                    'Full Stack developer',
+                    LangsSupported.data["title"]![currentLang] ?? "",
                     style: TextStyle(fontSize: 25.0),
                   ),
                 ),
@@ -71,27 +75,27 @@ class Content extends StatelessWidget {
                   height: 50,
                 ),
                 SectionButton(
-                  lable: 'About',
+                  lable: dataBaseConnection.aboutLable[currentLang]!,
                   onTap: () => scrollToItem(0, size),
                 ),
                 SectionButton(
-                  lable: 'Experince',
+                  lable: dataBaseConnection.experienceLable[currentLang]!,
                   onTap: () => scrollToItem(1, size),
                 ),
                 SectionButton(
-                  lable: 'Projects',
+                  lable: dataBaseConnection.projectsLable[currentLang]!,
                   onTap: () => scrollToItem(3, size),
                 ),
                 SectionButton(
-                  lable: 'Highlights',
+                  lable: dataBaseConnection.highlighstLable[currentLang]!,
                   onTap: () => scrollToItem(3, size),
                 ),
                 SectionButton(
-                  lable: 'Skills',
+                  lable: dataBaseConnection.skillsLable[currentLang]!,
                   onTap: () => scrollToItem(2, size),
                 ),
                 SectionButton(
-                  lable: 'Blog',
+                  lable: dataBaseConnection.blogLable[currentLang]!,
                   onTap: () => scrollToItem(3, size),
                 ),
                 const Spacer(),
