@@ -23,11 +23,9 @@ class _HomeBodyState extends State<HomeBody> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Transform.scale(
-          scale: 1.3,
-          child: Image.network(
-            'https://raw.githubusercontent.com/reitmas32/portfolio/featstatic_files/assets/profile.png',
-          ),
+        Image.network(
+          'https://raw.githubusercontent.com/reitmas32/portfolio/v2.0.0/assets/profile.png',
+          height: 300,
         ),
         const SizedBox(
           height: 50,
@@ -45,7 +43,7 @@ class _HomeBodyState extends State<HomeBody> {
           textAlign: TextAlign.center,
         ),
         const Text(
-          'Full Stack developer',
+          'Software developer',
           style: TextStyle(fontSize: 25.0),
         ),
         SizedBox(

@@ -12,12 +12,11 @@ import 'package:portfolio/service/DB/projects/telegram_bot_fortnite.dart';
 import 'package:portfolio/service/DB/projects/tetris.dart';
 import 'package:portfolio/service/DB/projects/unicyber.dart';
 import 'package:portfolio/service/DB/projects/unihacks_home.dart';
-import 'package:portfolio/service/DB/projects/yonesto_ui.dart';
 import 'package:portfolio/service/DB/tecnologies.dart';
 
 class DataBaseStatic implements DataBase {
   final List<Project> data = [
-    YonestoUIProject,
+    //YonestoUIProject,
     UNIHacksHomeProject,
     UNICyberProject,
     Moon_Project,
@@ -36,16 +35,18 @@ class DataBaseStatic implements DataBase {
     Tecnologies.python,
     Tecnologies.flask,
     Tecnologies.django,
+    Tecnologies.fastapi,
+    Tecnologies.grpc,
     Tecnologies.docker,
     Tecnologies.golang,
+    Tecnologies.firebase,
     Tecnologies.flutter,
-    Tecnologies.postgres,
     Tecnologies.cpp,
     Tecnologies.aws,
     Tecnologies.bash,
-    Tecnologies.firebase,
     Tecnologies.git,
     Tecnologies.github,
+    Tecnologies.postgres,
   ];
 
   final about = """

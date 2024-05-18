@@ -2,7 +2,7 @@ import 'package:portfolio/domain/models/tecnology.dart';
 
 abstract class Tecnologies {
   static const String path =
-      'https://raw.githubusercontent.com/reitmas32/portfolio/5b319bec1a0db49b1c250f54f246ae9d07392a5d/assets/logos';
+      'https://raw.githubusercontent.com/reitmas32/portfolio/7162e815b1321eaa58a472fd560f25df5a6cd282/assets/logos';
 
   /// Completely invisible.
   static Technology flutter = const Technology(
@@ -29,6 +29,16 @@ abstract class Tecnologies {
     name: 'Django',
     url: 'https://www.djangoproject.com/',
     logo: '${Tecnologies.path}/django.svg',
+  );
+  static Technology grpc = const Technology(
+    name: 'gRPC',
+    url: 'https://grpc.io/',
+    logo: '${Tecnologies.path}/grpc.svg',
+  );
+  static Technology fastapi = const Technology(
+    name: 'FastAPI',
+    url: 'https://fastapi.tiangolo.com/',
+    logo: '${Tecnologies.path}/fastapi.svg',
   );
   static Technology gin = const Technology(
     name: 'Gin',
