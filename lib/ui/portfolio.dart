@@ -47,12 +47,10 @@ class PortfolioState extends State<Portfolio> {
 
   @override
   Widget build(BuildContext context) {
-    final currentTheme = Provider.of<ThemeProvider>(context);
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: _router,
-      theme:
-          currentTheme.isDarkTheme() ? AppTheme.darkTheme : AppTheme.lightTheme,
+      theme: AppTheme.darkTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
     );
