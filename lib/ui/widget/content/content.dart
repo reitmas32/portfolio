@@ -79,11 +79,19 @@ class Content extends StatelessWidget {
                   onTap: () => scrollToItem(1, size),
                 ),
                 SectionButton(
+                  lable: 'Projects',
+                  onTap: () => scrollToItem(3, size),
+                ),
+                SectionButton(
+                  lable: 'Highlights',
+                  onTap: () => scrollToItem(3, size),
+                ),
+                SectionButton(
                   lable: 'Skills',
                   onTap: () => scrollToItem(2, size),
                 ),
                 SectionButton(
-                  lable: 'Projects',
+                  lable: 'Blog',
                   onTap: () => scrollToItem(3, size),
                 ),
                 const Spacer(),
