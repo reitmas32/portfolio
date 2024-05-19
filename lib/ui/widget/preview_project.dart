@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/domain/models/project.dart';
+import 'package:portfolio/ui/providers/lang_provider.dart';
 import 'package:portfolio/ui/tools/get_target.dart';
 import 'package:portfolio/ui/widget/button_project.dart';
 
-class PreviewProject extends StatefulWidget {
+class PreviewProject extends ConsumerStatefulWidget {
   const PreviewProject({
     super.key,
     required this.project,
@@ -13,15 +15,16 @@ class PreviewProject extends StatefulWidget {
   final Project? project;
 
   @override
-  State<PreviewProject> createState() => _PreviewProjectState();
+  ConsumerState<PreviewProject> createState() => _PreviewProjectState();
 }
 
-class _PreviewProjectState extends State<PreviewProject> {
+class _PreviewProjectState extends ConsumerState<PreviewProject> {
   double fontSizeButton = 25.0;
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+    final currentLang = ref.watch(langProvider);
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 20.0),
       width: size.width > 1000 ? size.width / 3 : size.width / 1.4,
@@ -36,7 +39,7 @@ class _PreviewProjectState extends State<PreviewProject> {
             child: Column(
               children: [
                 Text(
-                  widget.project!.description,
+                  widget.project!.description[currentLang]!,
                 ),
                 if (size.width > 1200)
                   Wrap(

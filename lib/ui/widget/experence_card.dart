@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/domain/models/experience.dart';
+import 'package:portfolio/ui/providers/lang_provider.dart';
 
-class ExperienceCard extends StatefulWidget {
+class ExperienceCard extends ConsumerStatefulWidget {
   const ExperienceCard({super.key, required this.experience});
 
   final Experience experience;
 
   @override
-  State<ExperienceCard> createState() => _ExperienceCardState();
+  ConsumerState<ExperienceCard> createState() => _ExperienceCardState();
 }
 
-class _ExperienceCardState extends State<ExperienceCard> {
+class _ExperienceCardState extends ConsumerState<ExperienceCard> {
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
+    final currentLang = ref.watch(langProvider);
     return MouseRegion(
       onHover: ((event) {
         setState(() {
@@ -75,7 +78,7 @@ class _ExperienceCardState extends State<ExperienceCard> {
                         padding: const EdgeInsets.symmetric(
                           vertical: 8.0,
                         ),
-                        child: Text(
+                        child: SelectableText(
                           widget.experience.company,
                           style: GoogleFonts.montserrat(
                             fontSize: 18,
@@ -87,7 +90,7 @@ class _ExperienceCardState extends State<ExperienceCard> {
                         padding: const EdgeInsets.symmetric(
                           vertical: 8.0,
                         ),
-                        child: Text(
+                        child: SelectableText(
                           widget.experience.title,
                           style: GoogleFonts.montserrat(
                             fontSize: 17,
@@ -99,8 +102,8 @@ class _ExperienceCardState extends State<ExperienceCard> {
                         padding: const EdgeInsets.symmetric(
                           vertical: 8.0,
                         ),
-                        child: Text(
-                          widget.experience.description,
+                        child: SelectableText(
+                          widget.experience.description[currentLang]!,
                           textAlign: TextAlign.justify,
                           style: GoogleFonts.montserrat(
                             fontSize: 15,

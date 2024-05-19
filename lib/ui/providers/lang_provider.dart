@@ -27,7 +27,7 @@ class LangsSupported {
 
 // Define the StateNotifier
 class LangNotifier extends StateNotifier<String> {
-  LangNotifier() : super(LangsSupported.SPANISH);
+  LangNotifier() : super(LangsSupported.ENGLISH);
 
   void setLang(String lang) {
     state = lang;

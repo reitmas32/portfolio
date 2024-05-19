@@ -2,6 +2,7 @@
 
 import 'package:portfolio/domain/models/project.dart';
 import 'package:portfolio/service/DB/tecnologies.dart';
+import 'package:portfolio/ui/providers/lang_provider.dart';
 
 Project NextProject = Project(
   tecnologies: [
@@ -13,8 +14,12 @@ Project NextProject = Project(
   publishDate: DateTime.utc(2023, 3, 28),
   img:
       'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/next-homepage-img.png',
-  description:
-      'Next is a C/C++ project manager, it is designed as a solution to the administration that this type of projects require.',
+  description: {
+    LangsSupported.ENGLISH:
+        'Next is a C/C++ project manager, it is designed as a solution to the administration that this type of projects require.',
+    LangsSupported.SPANISH:
+        'El siguiente es un gestor de proyectos C/C++, está diseñado como una solución a la administración que requieren este tipo de proyectos.',
+  },
   tags: ['design', 'dev', 'system'],
   urlProject: 'https://next-b3d34.web.app',
   urlRepository: 'https://github.com/reitmas32/Next',

@@ -2,6 +2,7 @@
 
 import 'package:portfolio/domain/models/project.dart';
 import 'package:portfolio/service/DB/tecnologies.dart';
+import 'package:portfolio/ui/providers/lang_provider.dart';
 
 Project UNIHacksHomeProject = Project(
   tecnologies: [
@@ -12,8 +13,12 @@ Project UNIHacksHomeProject = Project(
   publishDate: DateTime.utc(2023, 9, 3),
   img:
       'https://raw.githubusercontent.com/reitmas32/home/main/assets/home_dark.png',
-  description:
-      'We are a diverse team of students united by a passion for technology and innovation, collaborating to address challenges in our university community.',
+  description: {
+    LangsSupported.ENGLISH:
+        'We are a diverse team of students united by a passion for technology and innovation, collaborating to address challenges in our university community.',
+    LangsSupported.SPANISH:
+        'Somos un equipo diverso de estudiantes unidos por la pasión por la tecnología y la innovación, colaborando para abordar los desafíos de nuestra comunidad universitaria.',
+  },
   tags: ['design', 'dev', 'flutter'],
   urlProject: 'https://unihacks.onrender.com',
   urlRepository: 'https://github.com/reitmas32/home',

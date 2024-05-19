@@ -4,29 +4,6 @@ import 'package:portfolio/service/DB/data_base_i.dart';
 class DataBaseFiles implements DataBase {
   final List<Project> data = [];
 
-  loadFiles() async {
-    data.add(
-      await Project.fromYamlFileWeb(
-        'https://raw.githubusercontent.com/reitmas32/portfolio/main/lib/service/DB/projects/moon.yaml',
-      ),
-    );
-    data.add(
-      await Project.fromYamlFileWeb(
-        'https://raw.githubusercontent.com/reitmas32/portfolio/main/lib/service/DB/projects/tetris.yaml',
-      ),
-    );
-    data.add(
-      await Project.fromYamlFileWeb(
-        'https://raw.githubusercontent.com/reitmas32/portfolio/main/lib/service/DB/projects/telegram_bot_fortnite.yaml',
-      ),
-    );
-    data.add(
-      await Project.fromYamlFileWeb(
-        'https://raw.githubusercontent.com/reitmas32/portfolio/featstatic_files/lib/service/DB/projects/next.yaml',
-      ),
-    );
-  }
-
   @override
   List<Project> getProjects() {
     return data;

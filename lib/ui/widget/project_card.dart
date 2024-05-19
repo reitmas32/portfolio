@@ -1,24 +1,27 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/domain/models/project.dart';
+import 'package:portfolio/ui/providers/lang_provider.dart';
 import 'package:portfolio/ui/widget/tecnologies.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ProjectCard extends StatefulWidget {
+class ProjectCard extends ConsumerStatefulWidget {
   const ProjectCard({super.key, required this.project});
 
   final Project project;
 
   @override
-  State<ProjectCard> createState() => _ProjectCardState();
+  ConsumerState<ProjectCard> createState() => _ProjectCardState();
 }
 
-class _ProjectCardState extends State<ProjectCard> {
+class _ProjectCardState extends ConsumerState<ProjectCard> {
   bool isHover = false;
 
   @override
   Widget build(BuildContext context) {
+    final currentLang = ref.watch(langProvider);
     return MouseRegion(
       onHover: ((event) {
         setState(() {
@@ -72,7 +75,7 @@ class _ProjectCardState extends State<ProjectCard> {
                         vertical: 8.0,
                       ),
                       child: Text(
-                        widget.project.description,
+                        widget.project.description[currentLang]!,
                         style: GoogleFonts.montserrat(
                           fontSize: 15,
                           fontWeight: FontWeight.w200,

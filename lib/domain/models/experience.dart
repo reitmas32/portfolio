@@ -3,7 +3,7 @@ class Experience {
   final String end;
   final String title;
   final String company;
-  final String description;
+  final Map<String, String> description;
 
   Experience({
     required this.start,

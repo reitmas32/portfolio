@@ -3,9 +3,13 @@ import 'package:portfolio/domain/models/experience.dart';
 import 'package:portfolio/domain/models/project.dart';
 import 'package:portfolio/domain/models/tecnology.dart';
 import 'package:portfolio/service/DB/data_base_i.dart';
+import 'package:portfolio/service/DB/experiences/fairplay.dart';
 import 'package:portfolio/service/DB/experiences/intructor_flutter.dart';
 import 'package:portfolio/service/DB/experiences/open_source_dev.dart';
 import 'package:portfolio/service/DB/experiences/ui_ux_tester.dart';
+import 'package:portfolio/service/DB/highlights/apple.dart';
+import 'package:portfolio/service/DB/highlights/cemex.dart';
+import 'package:portfolio/service/DB/highlights/nasa.dart';
 import 'package:portfolio/service/DB/projects/duet_game.dart';
 import 'package:portfolio/service/DB/projects/moon.dart';
 import 'package:portfolio/service/DB/projects/next.dart';
@@ -29,10 +33,18 @@ class DataBaseStatic implements DataBase {
   ];
 
   final List<Experience> experiences = [
+    Fairplay,
     InstructorFlutter,
     UXUITester,
     OpenSourceDev,
   ];
+
+  final List<Experience> highlights = [
+    HacksApple,
+    HacksCemex,
+    HacksNasa,
+  ];
+
   final List<Technology> skills = [
     Tecnologies.python,
     Tecnologies.flask,

@@ -14,8 +14,8 @@ class AboutMeSection extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'AboutMe',
+          SelectableText(
+            dataBaseConnection.aboutLable[currentLang]!,
             style: GoogleFonts.montserrat(
               fontSize: 22,
               fontWeight: FontWeight.w600,
@@ -23,7 +23,7 @@ class AboutMeSection extends ConsumerWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(right: 30, top: 30),
-            child: Text(
+            child: SelectableText(
               dataBaseConnection.about[currentLang]!,
               style: GoogleFonts.montserrat(
                 height: 1.5,

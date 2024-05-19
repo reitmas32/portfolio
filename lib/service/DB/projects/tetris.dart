@@ -2,6 +2,7 @@
 
 import 'package:portfolio/domain/models/project.dart';
 import 'package:portfolio/service/DB/tecnologies.dart';
+import 'package:portfolio/ui/providers/lang_provider.dart';
 
 Project TetrisProject = Project(
   tecnologies: [
@@ -12,8 +13,12 @@ Project TetrisProject = Project(
   publishDate: DateTime.utc(2020, 3, 15),
   img:
       'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/tetris-banner.png',
-  description:
-      'Classic Tetris-based game developed using C++ and the miniwin library.',
+  description: {
+    LangsSupported.ENGLISH:
+        'Classic Tetris-based game developed using C++ and the miniwin library.',
+    LangsSupported.SPANISH:
+        'Juego clásico basado en Tetris desarrollado con C++ y la biblioteca miniwin.',
+  },
   tags: ['design', 'dev', 'Game', 'C++'],
   urlProject: 'https://github.com/reitmas32/Tetris',
   urlRepository: 'https://github.com/reitmas32/Tetris',

@@ -5,8 +5,8 @@ import 'package:portfolio/service/DB/database.dart';
 import 'package:portfolio/ui/providers/lang_provider.dart';
 import 'package:portfolio/ui/widget/content/generate_items.dart';
 
-class ProjectsSection extends ConsumerWidget {
-  const ProjectsSection({super.key});
+class HighlightsSection extends ConsumerWidget {
+  const HighlightsSection({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -16,13 +16,16 @@ class ProjectsSection extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            dataBaseConnection.projectsLable[currentLang]!,
+            dataBaseConnection.highlighstLable[currentLang]!,
             style: GoogleFonts.montserrat(
               fontSize: 22,
               fontWeight: FontWeight.w600,
             ),
           ),
-          ...generateProjectsCards(),
+          ...generateHighlightsCards(),
+          const SizedBox(
+            height: 150,
+          ),
         ],
       ),
     );

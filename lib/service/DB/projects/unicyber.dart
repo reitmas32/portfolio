@@ -2,6 +2,7 @@
 
 import 'package:portfolio/domain/models/project.dart';
 import 'package:portfolio/service/DB/tecnologies.dart';
+import 'package:portfolio/ui/providers/lang_provider.dart';
 
 Project UNICyberProject = Project(
   tecnologies: [
@@ -15,8 +16,12 @@ Project UNICyberProject = Project(
   publishDate: DateTime.utc(2023, 7, 28),
   img:
       'https://raw.githubusercontent.com/reitmas32/UNICyber-BackEnd/main/unicyber-example.png',
-  description:
-      'The Equipment Loan System for UNICA\'s Rooms is an application designed to manage the loan of computer equipment. This system provides a set of operations that allow user account management, the creation and maintenance of classrooms, student registration and tracking, equipment loan control, and statistics generation.',
+  description: {
+    LangsSupported.ENGLISH:
+        'The Equipment Loan System for UNICA\'s Rooms is an application designed to manage the loan of computer equipment. This system provides a set of operations that allow user account management, the creation and maintenance of classrooms, student registration and tracking, equipment loan control, and statistics generation.',
+    LangsSupported.SPANISH:
+        'El Sistema de Préstamo de Equipos para Salas de la UNICA es una aplicación diseñada para gestionar el préstamo de equipos de cómputo. Este sistema proporciona un conjunto de operaciones que permiten la gestión de cuentas de usuarios, la creación y mantenimiento de aulas, el registro y seguimiento de estudiantes, el control de préstamo de equipos y la generación de estadísticas.',
+  },
   tags: ['design', 'dev', 'Python', 'Flutter'],
   urlProject: 'https://github.com/reitmas32/UNICyber',
   urlRepository: 'https://github.com/reitmas32/UNICyber',

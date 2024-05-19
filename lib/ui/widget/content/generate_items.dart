@@ -14,6 +14,16 @@ List<Widget> generateExperienceCards() {
   return cards;
 }
 
+List<Widget> generateHighlightsCards() {
+  List<Widget> cards = [];
+  for (var highlight in dataBaseConnection.highlights) {
+    cards.add(ExperienceCard(
+      experience: highlight,
+    ));
+  }
+  return cards;
+}
+
 List<Widget> generateSckilsIcons() {
   List<Widget> skills = [];
   for (var skill in dataBaseConnection.skills) {

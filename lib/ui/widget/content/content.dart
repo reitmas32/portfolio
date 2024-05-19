@@ -6,6 +6,7 @@ import 'package:portfolio/ui/providers/lang_provider.dart';
 import 'package:portfolio/ui/widget/contact_button.dart';
 import 'package:portfolio/ui/widget/content/about_me.dart';
 import 'package:portfolio/ui/widget/content/experience.dart';
+import 'package:portfolio/ui/widget/content/highlishts.dart';
 import 'package:portfolio/ui/widget/content/projects.dart';
 import 'package:portfolio/ui/widget/content/skills.dart';
 import 'package:portfolio/ui/widget/gradiente_text.dart';
@@ -26,8 +27,9 @@ class Content extends ConsumerWidget {
 
   static const elements = [
     AboutMeSection(),
-    ExperienceSection(),
     SkillsSection(),
+    ExperienceSection(),
+    HighlightsSection(),
     ProjectsSection(),
   ];
 
@@ -79,24 +81,20 @@ class Content extends ConsumerWidget {
                   onTap: () => scrollToItem(0, size),
                 ),
                 SectionButton(
-                  lable: dataBaseConnection.experienceLable[currentLang]!,
+                  lable: dataBaseConnection.skillsLable[currentLang]!,
                   onTap: () => scrollToItem(1, size),
                 ),
                 SectionButton(
-                  lable: dataBaseConnection.projectsLable[currentLang]!,
-                  onTap: () => scrollToItem(3, size),
+                  lable: dataBaseConnection.experienceLable[currentLang]!,
+                  onTap: () => scrollToItem(2, size),
                 ),
                 SectionButton(
                   lable: dataBaseConnection.highlighstLable[currentLang]!,
                   onTap: () => scrollToItem(3, size),
                 ),
                 SectionButton(
-                  lable: dataBaseConnection.skillsLable[currentLang]!,
-                  onTap: () => scrollToItem(2, size),
-                ),
-                SectionButton(
-                  lable: dataBaseConnection.blogLable[currentLang]!,
-                  onTap: () => scrollToItem(3, size),
+                  lable: dataBaseConnection.projectsLable[currentLang]!,
+                  onTap: () => scrollToItem(4, size),
                 ),
                 const Spacer(),
                 const Row(

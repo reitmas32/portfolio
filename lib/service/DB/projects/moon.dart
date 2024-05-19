@@ -2,6 +2,7 @@
 
 import 'package:portfolio/domain/models/project.dart';
 import 'package:portfolio/service/DB/tecnologies.dart';
+import 'package:portfolio/ui/providers/lang_provider.dart';
 
 final Moon_Project = Project(
   tecnologies: [Tecnologies.cpp],
@@ -10,8 +11,12 @@ final Moon_Project = Project(
   publishDate: DateTime.utc(2022, 7, 30),
   img:
       'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/moon-banner.png',
-  description:
-      'Moon is a game engine developed by KEGE Studios, written in C/C++. It was designed based on the ECS architecture and using some features of the new C++20 standard.',
+  description: {
+    LangsSupported.ENGLISH:
+        'Moon is a game engine developed by KEGE Studios, written in C/C++. It was designed based on the ECS architecture and using some features of the new C++20 standard.',
+    LangsSupported.SPANISH:
+        'Moon es un motor de juego desarrollado por KEGE Studios, escrito en C/C++. Fue diseñado basándose en la arquitectura ECS y utilizando algunas características del nuevo estándar C++20.',
+  },
   tags: ['design', 'dev', 'Game Engine'],
   urlProject:
       'https://ambiguous-sweater-c99.notion.site/Moon-Engine-dd64f15918ca4c63b8c129dae2991d79',

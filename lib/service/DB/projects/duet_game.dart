@@ -2,6 +2,7 @@
 
 import 'package:portfolio/domain/models/project.dart';
 import 'package:portfolio/service/DB/tecnologies.dart';
+import 'package:portfolio/ui/providers/lang_provider.dart';
 
 Project DuetProject = Project(
   tecnologies: [Tecnologies.flutter],
@@ -10,8 +11,12 @@ Project DuetProject = Project(
   publishDate: DateTime.utc(2023, 6, 15),
   img:
       'https://raw.githubusercontent.com/reitmas32/portfolio/featstatic_files/public/assets/duet-banner.jpeg',
-  description:
-      'Duet is a minimalist and challenging puzzle game in which you control two points connected by a thread. The goal is to navigate through an obstacle field by rotating and twisting the thread to avoid colliding with the barriers.',
+  description: {
+    LangsSupported.ENGLISH:
+        'Duet is a minimalist and challenging puzzle game in which you control two points connected by a thread. The goal is to navigate through an obstacle field by rotating and twisting the thread to avoid colliding with the barriers.',
+    LangsSupported.SPANISH:
+        'Duet es un juego de rompecabezas minimalista y desafiante en el que controlas dos puntos conectados por un hilo. El objetivo es navegar a través de un campo de obstáculos girando y girando el hilo para evitar chocar con las barreras.',
+  },
   tags: ['design', 'dev', 'Game', 'Flutter'],
   urlProject: 'https://duet-test-74834.web.app/',
   urlRepository: 'https://github.com/reitmas32/duet_game',

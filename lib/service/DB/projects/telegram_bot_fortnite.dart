@@ -2,6 +2,7 @@
 
 import 'package:portfolio/domain/models/project.dart';
 import 'package:portfolio/service/DB/tecnologies.dart';
+import 'package:portfolio/ui/providers/lang_provider.dart';
 
 Project TelegramBotProject = Project(
   tecnologies: [
@@ -12,8 +13,12 @@ Project TelegramBotProject = Project(
   publishDate: DateTime.utc(2023, 2, 10),
   img:
       'https://raw.githubusercontent.com/reitmas32/portfolio/master/public/assets/telegram_bot_fortnite.jpg',
-  description:
-      'Fortnite Store Telegram Bot: A custom chatbot designed to enhance the Fortnite gaming experience. It allows users to explore the in-game store, check out the latest items, skins, emotes, and more directly in their Telegram chat. The bot provides real-time updates',
+  description: {
+    LangsSupported.ENGLISH:
+        'Fortnite Store Telegram Bot: A custom chatbot designed to enhance the Fortnite gaming experience. It allows users to explore the in-game store, check out the latest items, skins, emotes, and more directly in their Telegram chat. The bot provides real-time updates',
+    LangsSupported.SPANISH:
+        'Fortnite Store Telegram Bot: un chatbot personalizado diseñado para mejorar la experiencia de juego de Fortnite. Permite a los usuarios explorar la tienda del juego, ver los últimos artículos, máscaras, emoticones y más directamente en su chat de Telegram. El bot proporciona actualizaciones en tiempo real.',
+  },
   tags: ['dev', 'Bot', 'Python'],
   urlProject: 'https://github.com/reitmas32/Tele_Bot_Fortnite',
   urlRepository: 'https://github.com/reitmas32/Tele_Bot_Fortnite',
